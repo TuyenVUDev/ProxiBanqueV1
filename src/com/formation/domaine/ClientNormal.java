@@ -18,4 +18,12 @@ public class ClientNormal extends Client {
 		this.typeClient = typeClient;
 	}
 
+	@Override
+	public String toString() {
+		return "ClientNormal [adresse=" + adresse + ", ville=" + ville
+				+ ", codePostal=" + codePostal + ", compte=" + compte
+				+ ", typeClient=" + typeClient + ", nom=" + nom + ", prenom="
+				+ prenom + "]";
+	}
+
 }

@@ -18,5 +18,12 @@ public class ClientFortune extends ClientNormal {
 		this.compte = compte;
 		this.typeClient = typeClient;
 	}
+	@Override
+	public String toString() {
+		return "ClientFortune [adresse=" + adresse + ", ville=" + ville
+				+ ", codePostal=" + codePostal + ", compte=" + compte
+				+ ", typeClient=" + typeClient + ", nom=" + nom + ", prenom="
+				+ prenom + "]";
+	}
 
 }

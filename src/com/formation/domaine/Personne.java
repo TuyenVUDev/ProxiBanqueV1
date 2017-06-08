@@ -2,8 +2,8 @@ package com.formation.domaine;
 
 public abstract class Personne {
 	//propriete
-	private String nom;
-	private String prenom;
+	protected String nom;
+	protected String prenom;
 	
 	//getter/setter
 	public String getNom() {

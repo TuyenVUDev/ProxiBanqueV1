@@ -15,6 +15,12 @@ public class Gerant extends Personne {
 		this.listeConseillers = listeConseillers;
 	}
 
+	@Override
+	public String toString() {
+		return "Gerant [listeConseillers=" + listeConseillers + ", nom=" + nom
+				+ ", prenom=" + prenom + "]";
+	}
+
 	// constructeur
 	public Gerant() {
 		super();

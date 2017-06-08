@@ -28,4 +28,13 @@ public class ClientEntreprise extends Client {
 		this.compte = compte;
 		this.typeClient = typeClient;
 	}
+
+	@Override
+	public String toString() {
+		return "ClientEntreprise [nomEntreprise=" + nomEntreprise
+				+ ", adresse=" + adresse + ", ville=" + ville + ", codePostal="
+				+ codePostal + ", compte=" + compte + ", typeClient="
+				+ typeClient + ", nom=" + nom + ", prenom=" + prenom + "]";
+	}
+	
 }

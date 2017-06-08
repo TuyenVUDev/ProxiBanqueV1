@@ -49,8 +49,10 @@ public abstract class Client extends Personne {
 	
 	@Override
 	public String toString() {
-		return "Client [adresse=" + adresse + ", ville=" + ville + ", codePostal=" + codePostal + ", compte=" + compte
-				+ ", typeClient=" + typeClient + "]";
+		return "Client [adresse=" + adresse + ", ville=" + ville
+				+ ", codePostal=" + codePostal + ", compte=" + compte
+				+ ", typeClient=" + typeClient + ", nom=" + nom + ", prenom="
+				+ prenom + "]";
 	}
 
 	// constructeur

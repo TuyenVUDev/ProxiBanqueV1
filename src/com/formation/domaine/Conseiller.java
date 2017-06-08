@@ -40,7 +40,7 @@ public class Conseiller extends Personne {
 	public String toString() {
 		return "Conseiller [listeClientConseilles=" + listeClientConseilles
 				+ ", listeTransactions=" + listeTransactions + ", nbClientMax="
-				+ nbClientMax + "]";
+				+ nbClientMax + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 
 	// constructeur

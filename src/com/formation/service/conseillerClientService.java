@@ -59,12 +59,15 @@ public class conseillerClientService {
 
 	}
 
-	public void voidModifInfoClient(Client client) {
-
+	public void modifInfoClient(int index, String nom, String prenom, String ville, String adresse) {
+		listeClients.get(index).setNom(nom);
+		listeClients.get(index).setPrenom(prenom);
+		listeClients.get(index).setVille(ville);
+		listeClients.get(index).setAdresse(adresse);
 	}
 
-	public String getInfoClient(Client client) {
-		return client.toString();
+	public String getInfoClient(int index) {
+		return listeClients.get(index).toString();
 	}
 
 	@Override
@@ -73,6 +76,7 @@ public class conseillerClientService {
 				+ ", listeClients=" + listeClients + "]";
 	}
 
+	//getter/setter
 	public Conseiller getConseiller() {
 		return conseiller;
 	}

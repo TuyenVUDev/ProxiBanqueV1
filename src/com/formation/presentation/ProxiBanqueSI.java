@@ -59,6 +59,10 @@ public class ProxiBanqueSI {
 		affichage.afficherPorteFeuille(Konrad);
 
 
+		conseillerClientService.modifInfoClient(3, "McLaughlin", "John", "NewYork", "3 rue perdue");
+		System.out.println(conseillerClientService.getInfoClient(3));
+
+
 		// System.out.println(Konrad.getListeClientConseilles().stream()
 		// .collect(Collectors.toList()));
 		//
