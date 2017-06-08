@@ -1,28 +1,28 @@
 package com.formation.domaine;
 
-import java.util.Collection;
+import java.util.ArrayList;
 
 public class Conseiller extends Personne {
 
 	// proprietes
-	private Collection<Client> listeClientConseilles;
-	private Collection<Transaction> listeTransactions;
-	private int nbClientMax;
+	private ArrayList<Client> listeClientConseilles;
+	private ArrayList<Transaction> listeTransactions;
+	private int nbClientMax=10;
 
 	// getters/setters
-	public Collection<Client> getListeClientConseilles() {
+	public ArrayList<Client> getListeClientConseilles() {
 		return listeClientConseilles;
 	}
 
-	public void setListeClientConseilles(Collection<Client> listeClientConseilles) {
+	public void setListeClientConseilles(ArrayList<Client> listeClientConseilles) {
 		this.listeClientConseilles = listeClientConseilles;
 	}
 
-	public Collection<Transaction> getListeTransactions() {
+	public ArrayList<Transaction> getListeTransactions() {
 		return listeTransactions;
 	}
 
-	public void setListeTransactions(Collection<Transaction> listeTransactions) {
+	public void setListeTransactions(ArrayList<Transaction> listeTransactions) {
 		this.listeTransactions = listeTransactions;
 	}
 
@@ -32,6 +32,13 @@ public class Conseiller extends Personne {
 
 	public void setNbClientMax(int nbClientMax) {
 		this.nbClientMax = nbClientMax;
+	}
+
+	@Override
+	public String toString() {
+		return "Conseiller [listeClientConseilles=" + listeClientConseilles
+				+ ", listeTransactions=" + listeTransactions + ", nbClientMax="
+				+ nbClientMax + "]";
 	}
 
 	// constructeur

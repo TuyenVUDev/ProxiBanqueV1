@@ -43,7 +43,7 @@ public class ConseillerService {
 
 	public boolean creerClient(String adresse, int codePostal, String ville, Compte compte, String typeClient) {
 		if (typeClient.equals("clientNormal")) { 
-			ClientNormal nouveauClient = new ClientNormal();
+			ClientNormal nouveauClient = new ClientNormal(adresse,ville,codePostal,null,typeClient);
 			listeClients.add(nouveauClient);
 			return true;
 		}
@@ -96,10 +96,25 @@ public class ConseillerService {
 
 	
 	
+	@Override
+	public String toString() {
+		return "ConseillerService [conseiller=" + conseiller
+				+ ", listeClients=" + listeClients + "]";
+	}
+
 	public float simulationCredit(Credit credit) {
 		
 		float interets =  ( credit.getMontant() * credit.getTaux() * credit.getDureeEnMois() ) / 12; //Fait le calcul d'interets
 		
 		return interets;
+	}
+
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+
+
+	public ArrayList<Client> getListeClients() {
+		return listeClients;
 	}
 }
