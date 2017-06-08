@@ -18,8 +18,6 @@ public abstract class Client extends Personne {
 		this.adresse = adresse;
 	}
 
-	
-
 	public String getVille() {
 		return ville;
 	}

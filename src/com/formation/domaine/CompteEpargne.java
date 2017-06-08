@@ -12,7 +12,7 @@ public class CompteEpargne extends Compte{
 
 	@Override
 	public String toString() {
-		return "CompteEpargne [tauxDeRemuneration=" + tauxDeRemuneration + "]";
+		return "Le compte est de type epargne avec un taux de rémunération de 3%";
 	}
 	
 	

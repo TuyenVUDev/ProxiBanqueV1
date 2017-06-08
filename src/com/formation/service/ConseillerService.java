@@ -45,6 +45,7 @@ public class ConseillerService {
 		if (typeClient.equals("clientNormal")) { 
 			ClientNormal nouveauClient = new ClientNormal(adresse,ville,codePostal,null,typeClient);
 			listeClients.add(nouveauClient);
+			conseiller.setListeClientConseilles(listeClients);
 			return true;
 		}
 
@@ -90,7 +91,7 @@ public class ConseillerService {
 	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,ComptePlacement compte) {
 //	//	clientFortune.
 	//	villeDePlacement 
-	//compte.get
+		
 		
 	}
 
