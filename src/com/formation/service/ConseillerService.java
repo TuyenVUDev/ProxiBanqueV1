@@ -21,7 +21,7 @@ public class ConseillerService {
 
 	public void clientInitiaux() {
 		Client client1, client2, client3, client4;
-		client1 = new ClientNormal("Rue val Fontaine","Saint genis les Ollières",69290,,"clientNormal"); 
+	//	client1 = new ClientNormal("Rue val Fontaine","Saint genis les Ollières",69290,"clientNormal"); 
 		
 		/*private String adresse;
 	private String ville;
