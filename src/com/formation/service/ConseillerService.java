@@ -90,7 +90,7 @@ public class ConseillerService {
 	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,ComptePlacement compte) {
 //	//	clientFortune.
 	//	villeDePlacement 
-		
+	//compte.get
 		
 	}
 

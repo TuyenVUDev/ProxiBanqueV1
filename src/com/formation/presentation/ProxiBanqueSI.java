@@ -34,11 +34,23 @@ public class ProxiBanqueSI {
 		
 		ConseillerService conseillerService = new ConseillerService(Konrad);
 		
-		//test creation de client
+		//test creation de client 
+		/*
 		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
 		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.getListeClients());
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
 		System.out.println(Konrad.getListeClientConseilles());
+		*/
+		for (Client client : Konrad.getListeClientConseilles()){
+			System.out.println(Konrad.getListeClientConseilles().indexOf(client) 
+					+ " : " + client.getVille() + " " 
+					+ client.getPrenom());
+		}
 		
 		//test remove
 		
