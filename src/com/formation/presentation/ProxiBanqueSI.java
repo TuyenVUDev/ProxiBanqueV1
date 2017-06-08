@@ -13,7 +13,7 @@ public class ProxiBanqueSI {
 
 	public static void main(String[] args) {
 
-		//Declaration pour test
+		// Declaration pour test
 		Gerant Gerard = new Gerant();
 		Gerard.setNom("Majax");
 		Gerard.setPrenom("Gerard");
@@ -30,35 +30,31 @@ public class ProxiBanqueSI {
 		Client Clyde = new ClientFortune();
 		Clyde.setNom("Barrow");
 		Clyde.setPrenom("Clyde");
-		
-		
-		// Déclarations
+
+		// Dï¿½clarations
 		int choix;
 		char cont = 'O';
-		
 
 		Scanner sc = new Scanner(System.in);
-		
+
 		do {
-		System.out.println("Accueil de ProxiBanqueSI : \n + acces pour : \n1 : Conseiller \n2 : Gerant \n");
-		choix = sc.nextInt(); 
+			System.out.println("Accueil de ProxiBanqueSI : \n + acces pour : \n1 : Conseiller \n2 : Gerant \n");
+			choix = sc.nextInt();
 			switch (choix) {
 			case 1:
 				System.out.println("Connexion d'un conseiller \n");
-				conseillerPresentation conseillerPresentation =new conseillerPresentation();
+				conseillerPresentation conseillerPresentation = new conseillerPresentation();
 				conseillerPresentation.menuConseiller();
 				break;
 			case 2:
 				System.out.println("Connexion d'un gerant \n");
-				
+
 				break;
 			}
-				System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
-				cont = sc.next().charAt(0);	
-			
-			} while (cont == 'O');
-			
+			System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
+			cont = sc.next().charAt(0);
 
-		}
+		} while (cont == 'O');
+
 	}
-
+}
