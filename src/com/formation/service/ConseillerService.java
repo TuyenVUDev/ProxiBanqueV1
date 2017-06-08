@@ -19,6 +19,8 @@ public class ConseillerService {
 	private Conseiller conseiller;
 	ArrayList<Client> listeClients = new ArrayList<Client>();
 
+	
+	
 	public ConseillerService(Conseiller conseiller) {
 		super();
 		this.conseiller = conseiller;
@@ -26,26 +28,22 @@ public class ConseillerService {
 
 	public void clientInitiaux() {
 		Client client1, client2, client3, client4;
-		// client1 = new ClientNormal("Rue val Fontaine","Saint genis les
-		// Ollières",69290,"clientNormal");
-
-		/*
-		 * private String adresse; private String ville; private int codePostal; private
-		 * Compte compte; private String typeClient;
+	//	client1 = new ClientNormal("Rue val Fontaine","Saint genis les Ollières",69290,"clientNormal"); 
+		
+		/*private String adresse;
+	private String ville;
+	private int codePostal;
+	private Compte compte;
+	private String typeClient;
 		 * 
 		 * 
 		 * 
-		 */
+		 * */
 	};
 
 	public boolean creerClient(String adresse, int codePostal, String ville, Compte compte, String typeClient) {
-<<<<<<< HEAD
-		if (typeClient.equals("clientNormal")) {
-			ClientNormal nouveauClient = new ClientNormal();
-=======
 		if (typeClient.equals("clientNormal")) { 
 			ClientNormal nouveauClient = new ClientNormal(adresse,ville,codePostal,null,typeClient);
->>>>>>> 2dd7cd50f4497cfc07add6bbb61e26242afe0329
 			listeClients.add(nouveauClient);
 			return true;
 		}
@@ -61,7 +59,7 @@ public class ConseillerService {
 			listeClients.add(nouveauClient3);
 			return true;
 		} else
-			return false; // Renvoie false si aucun client n'a été crée
+			return false; //Renvoie false si aucun client n'a été crée
 
 	}
 
@@ -76,36 +74,26 @@ public class ConseillerService {
 	}
 
 	public String getInfoClient(Client client) {
-		
 		return client.toString();
 	}
 
-	public float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte à l'autre.
-		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant(); // Credit du
-																										// compte débité
-																										// après
-																										// opération
-		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant(); // Credit du
-																											// compte
-																											// crédité
-																											// après
-																											// opération
-		transaction.getCompteDebite().setSolde(finalCompteDebite); // Fixe le solde du compte
-		transaction.getCompteCredite().setSolde(finalCompteCredite); // Fixe le solde du compte
+	public  float virementCompteACompte(Transaction transaction) { //Fait le virement d'un compte à l'autre.
+		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant();  //Credit du compte débité après opération
+		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant(); //Credit du compte crédité après opération
+		transaction.getCompteDebite().setSolde(finalCompteDebite); //Fixe le solde du compte
+		transaction.getCompteCredite().setSolde(finalCompteCredite); //Fixe le solde du compte
 
-		return transaction.getMontant(); // Retourne le montant de la transaction
-
+		return transaction.getMontant(); //Retourne le montant de la transaction
+		
 	}
 
-	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,
-			ComptePlacement compte) {
-		// // clientFortune.
-		// villeDePlacement
-
+	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,ComptePlacement compte) {
+//	//	clientFortune.
+	//	villeDePlacement 
+		
+		
 	}
 
-<<<<<<< HEAD
-=======
 	
 	
 	@Override
@@ -114,12 +102,10 @@ public class ConseillerService {
 				+ ", listeClients=" + listeClients + "]";
 	}
 
->>>>>>> 2dd7cd50f4497cfc07add6bbb61e26242afe0329
 	public float simulationCredit(Credit credit) {
-
-		float interets = (credit.getMontant() * credit.getTaux() * credit.getDureeEnMois()) / 12; // Fait le calcul
-																									// d'interets
-
+		
+		float interets =  ( credit.getMontant() * credit.getTaux() * credit.getDureeEnMois() ) / 12; //Fait le calcul d'interets
+		
 		return interets;
 	}
 

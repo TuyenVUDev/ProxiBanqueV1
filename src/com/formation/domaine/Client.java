@@ -1,7 +1,7 @@
 package com.formation.domaine;
 
 public abstract class Client extends Personne {
-
+	
 	// proprietes
 	protected String adresse;
 	protected String ville;
@@ -17,6 +17,8 @@ public abstract class Client extends Personne {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+
+	
 
 	public String getVille() {
 		return ville;
@@ -42,6 +44,9 @@ public abstract class Client extends Personne {
 		this.compte = compte;
 	}
 
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Client [adresse=" + adresse + ", ville=" + ville + ", codePostal=" + codePostal + ", compte=" + compte
@@ -49,8 +54,6 @@ public abstract class Client extends Personne {
 	}
 
 	// constructeur
-<<<<<<< HEAD
-=======
 	
 	
 	public Client(String adresse, String ville,
@@ -61,7 +64,6 @@ public abstract class Client extends Personne {
 		this.compte = compte;
 		this.typeClient = typeClient;
 	}
->>>>>>> 2dd7cd50f4497cfc07add6bbb61e26242afe0329
 
 	public Client(String adresse, String ville, int codePostal, Compte compte) {
 		super();
@@ -70,7 +72,6 @@ public abstract class Client extends Personne {
 		this.codePostal = codePostal;
 		this.compte = compte;
 	}
-
 	public Client(String adresse, String ville, int codePostal) {
 		super();
 		this.adresse = adresse;
@@ -78,7 +79,6 @@ public abstract class Client extends Personne {
 		this.codePostal = codePostal;
 		this.compte = null;
 	}
-
 	public Client(String adresse, String ville) {
 		super();
 		this.adresse = adresse;
@@ -86,7 +86,6 @@ public abstract class Client extends Personne {
 		this.codePostal = 0;
 		this.compte = null;
 	}
-
 	public Client(String adresse) {
 		super();
 		this.adresse = adresse;
@@ -94,7 +93,6 @@ public abstract class Client extends Personne {
 		this.codePostal = 0;
 		this.compte = null;
 	}
-
 	public Client() {
 		super();
 		this.adresse = "inconnu";
@@ -102,5 +100,6 @@ public abstract class Client extends Personne {
 		this.codePostal = 0;
 		this.compte = null;
 	}
+	
 
 }
