@@ -13,15 +13,13 @@ public class conseillerPresentation {
 				+ "1 : ajouter un nouveau client\n"
 				+ "2 : supprimer un client\n" 
 				+ "3 : modifier les informations d'un client\n"
-				+ "4 : effectuer un virement de compte à compte\n" 
+				+ "4 : effectuer un virement de compte ï¿½ compte\n" 
 				+ "5 : faire une simulation de credit\n"
 				+ "6 : obtenir laliste des transactions\n" 
 				+ "7 : faire de la gestion de patrimoine\n"
 				+ "8 : faire un audit des clients");
-		choix = sc.nextInt(); // Demande l'option à sélectionner
+		choix = sc.nextInt(); // Demande l'option ï¿½ sï¿½lectionner
 
-
-		
 		do {
 			switch (choix) {
 			case 1:
@@ -34,7 +32,7 @@ public class conseillerPresentation {
 				System.out.println("modification des informations d'un client\n");
 				break;
 			case 4:
-				System.out.println("virement de compte à compte\n");
+				System.out.println("virement de compte ï¿½ compte\n");
 				break;
 			case 5:
 				System.out.println("simulation de credit\n");
@@ -50,7 +48,7 @@ public class conseillerPresentation {
 				System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
 				cont = sc.next().charAt(0);	
 		
-		choix = sc.nextInt(); // Demande l'option à sélectionner
+		choix = sc.nextInt(); // Demande l'option ï¿½ sï¿½lectionner
 		} while (cont == 'O');
 
 	}

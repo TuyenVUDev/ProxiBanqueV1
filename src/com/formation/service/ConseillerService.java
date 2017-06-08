@@ -26,21 +26,7 @@ public class ConseillerService {
 		this.conseiller = conseiller;
 	}
 
-	public void clientInitiaux() {
-		Client client1, client2, client3, client4;
-	//	client1 = new ClientNormal("Rue val Fontaine","Saint genis les Ollières",69290,"clientNormal"); 
-		
-		/*private String adresse;
-	private String ville;
-	private int codePostal;
-	private Compte compte;
-	private String typeClient;
-		 * 
-		 * 
-		 * 
-		 * */
-	};
-
+	
 	public boolean creerClient(String adresse, int codePostal, String ville, Compte compte, String typeClient) {
 		if (typeClient.equals("clientNormal")) { 
 			ClientNormal nouveauClient = new ClientNormal(adresse,ville,codePostal,null,typeClient);
