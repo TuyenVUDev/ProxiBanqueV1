@@ -1,8 +1,8 @@
 package com.formation.domaine;
 
-public class ClientNormal  extends Client{
+public class ClientNormal extends Client {
 
-	//constructeur
+	// constructeur
 	public ClientNormal() {
 		super();
 		// TODO Auto-generated constructor stub

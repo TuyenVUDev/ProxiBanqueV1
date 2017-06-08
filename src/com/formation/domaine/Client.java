@@ -18,6 +18,8 @@ public abstract class Client extends Personne {
 		this.adresse = adresse;
 	}
 
+	
+
 	public String getVille() {
 		return ville;
 	}
@@ -52,8 +54,42 @@ public abstract class Client extends Personne {
 	}
 
 	// constructeur
+	
+	public Client(String adresse, String ville, int codePostal, Compte compte) {
+		super();
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = codePostal;
+		this.compte = compte;
+	}
+	public Client(String adresse, String ville, int codePostal) {
+		super();
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = codePostal;
+		this.compte = null;
+	}
+	public Client(String adresse, String ville) {
+		super();
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = 0;
+		this.compte = null;
+	}
+	public Client(String adresse) {
+		super();
+		this.adresse = adresse;
+		this.ville = "inconnu";
+		this.codePostal = 0;
+		this.compte = null;
+	}
 	public Client() {
 		super();
+		this.adresse = "inconnu";
+		this.ville = "inconnu";
+		this.codePostal = 0;
+		this.compte = null;
 	}
+	
 
 }

@@ -2,7 +2,7 @@ package com.formation.domaine;
 
 public class ClientFortune extends ClientNormal {
 
-//constructeur
+	// constructeur
 	public ClientFortune() {
 		super();
 		
