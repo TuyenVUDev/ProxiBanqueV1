@@ -1,6 +1,7 @@
 package com.formation.presentation;
 
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import com.formation.domaine.Client;
 import com.formation.domaine.ClientEntreprise;
@@ -35,22 +36,24 @@ public class ProxiBanqueSI {
 		ConseillerService conseillerService = new ConseillerService(Konrad);
 		
 		//test creation de client
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
+		System.out.println(conseillerService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
+		System.out.println(conseillerService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
 		System.out.println(Konrad.getListeClientConseilles());
 
 		for (Client client : Konrad.getListeClientConseilles()){
 			System.out.println(Konrad.getListeClientConseilles().indexOf(client) 
-					+ " : " + client.getVille() + " " 
+					+ " : " + client.getAdresse() + " " 
 					+ client.getPrenom());
 		}
-		
+//		System.out.println(Konrad.getListeClientConseilles().stream()
+//				.collect(Collectors.toList()));
+//		
 		//test remove
 		
 //		// D�clarations
