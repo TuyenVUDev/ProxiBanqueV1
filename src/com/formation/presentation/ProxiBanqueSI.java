@@ -10,12 +10,13 @@ import com.formation.domaine.ClientNormal;
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Gerant;
 import com.formation.service.ConseillerService;
+import com.formation.service.conseillerClientService;
 
 public class ProxiBanqueSI {
 
 	public static void main(String[] args) {
 
-		//Declaration pour test
+		// Declaration pour test
 		Gerant Gerard = new Gerant();
 		Gerard.setNom("Majax");
 		Gerard.setPrenom("Gerard");
@@ -32,57 +33,64 @@ public class ProxiBanqueSI {
 		Client Clyde = new ClientFortune();
 		Clyde.setNom("Barrow");
 		Clyde.setPrenom("Clyde");
-		
-		ConseillerService conseillerService = new ConseillerService(Konrad);
-		
-		//test creation de client
-		System.out.println(conseillerService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
-		System.out.println(conseillerService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(Konrad.getListeClientConseilles());
 
-		for (Client client : Konrad.getListeClientConseilles()){
-			System.out.println(Konrad.getListeClientConseilles().indexOf(client) 
-					+ " : " + client.getAdresse() + " " 
-					+ client.getPrenom());
-		}
-//		System.out.println(Konrad.getListeClientConseilles().stream()
-//				.collect(Collectors.toList()));
-//		
-		//test remove
+		conseillerClientService conseillerClientService = new conseillerClientService(
+				Konrad);
+		// test creation de client
+		// System.out.println(Konrad.getListeClientConseilles().size());
+
+		conseillerClientService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+		conseillerClientService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise");
+		conseillerClientService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientFortune");
+		conseillerClientService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+		conseillerClientService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+		conseillerClientService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+		conseillerClientService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+		conseillerClientService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientNormal");
 		
-//		// D�clarations
-//		int choix;
-//		char cont = 'O';
-//		
-//
-//		Scanner sc = new Scanner(System.in);
-//		
-//		do {
-//		System.out.println("Accueil de ProxiBanqueSI : \n + acces pour : \n1 : Conseiller \n2 : Gerant \n");
-//		choix = sc.nextInt(); 
-//			switch (choix) {
-//			case 1:
-//				System.out.println("Connexion d'un conseiller \n");
-//				conseillerPresentation conseillerPresentation =new conseillerPresentation();
-//				conseillerPresentation.menuConseiller();
-//				break;
-//			case 2:
-//				System.out.println("Connexion d'un gerant \n");
-//				
-//				break;
-//			}
-//				System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
-//				cont = sc.next().charAt(0);	
-//			
-//			} while (cont == 'O');
-//			
-//
-		}
+
+//		conseillerClientService.getListeClients().remove(3);
+		System.out.println(Konrad.getListeClientConseilles().size());
+
+		AffichagePortefeuillePresentation affichage= new AffichagePortefeuillePresentation();
+//		affichage.afficherPorteFeuille(Konrad);
+		
+		conseillerClientService.supprimerClient(3);
+		affichage.afficherPorteFeuille(Konrad);
+
+
+		// System.out.println(Konrad.getListeClientConseilles().stream()
+		// .collect(Collectors.toList()));
+		//
+		// test remove
+
+		// // D�clarations
+		// int choix;
+		// char cont = 'O';
+		//
+		//
+		// Scanner sc = new Scanner(System.in);
+		//
+		// do {
+		// System.out.println("Accueil de ProxiBanqueSI : \n + acces pour : \n1 : Conseiller \n2 : Gerant \n");
+		// choix = sc.nextInt();
+		// switch (choix) {
+		// case 1:
+		// System.out.println("Connexion d'un conseiller \n");
+		// conseillerPresentation conseillerPresentation =new
+		// conseillerPresentation();
+		// conseillerPresentation.menuConseiller();
+		// break;
+		// case 2:
+		// System.out.println("Connexion d'un gerant \n");
+		//
+		// break;
+		// }
+		// System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
+		// cont = sc.next().charAt(0);
+		//
+		// } while (cont == 'O');
+		//
+		//
 	}
-
+}

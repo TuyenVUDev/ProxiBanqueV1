@@ -54,7 +54,7 @@ public abstract class Client extends Personne {
 	}
 
 	// constructeur
-	
+
 	
 	public Client(String adresse, String ville,
 			int codePostal, Compte compte, String typeClient) {

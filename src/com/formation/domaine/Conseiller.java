@@ -8,7 +8,9 @@ public class Conseiller extends Personne {
 	private ArrayList<Client> listeClientConseilles;
 	private ArrayList<Transaction> listeTransactions;
 	private int nbClientMax=10;
-
+	
+	
+	
 	// getters/setters
 	public ArrayList<Client> getListeClientConseilles() {
 		return listeClientConseilles;
