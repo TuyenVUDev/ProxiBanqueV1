@@ -7,6 +7,7 @@ public abstract class Client extends Personne {
 	private String ville;
 	private int codePostal;
 	private Compte compte;
+	private String typeClient;
 
 	// getters/setters
 	public String getAdresse() {
@@ -39,6 +40,15 @@ public abstract class Client extends Personne {
 
 	public void setCompte(Compte compte) {
 		this.compte = compte;
+	}
+
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Client [adresse=" + adresse + ", ville=" + ville + ", codePostal=" + codePostal + ", compte=" + compte
+				+ ", typeClient=" + typeClient + "]";
 	}
 
 	// constructeur

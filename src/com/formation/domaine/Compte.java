@@ -20,6 +20,38 @@ public class Compte {
 		return "Compte [solde=" + solde + ", numDeCompte=" + numDeCompte + ", dateOuverture=" + dateOuverture + ", tel="
 				+ tel + "]";
 	}
+
+	public float getSolde() {
+		return solde;
+	}
+
+	public void setSolde(float solde) {
+		this.solde = solde;
+	}
+
+	public int getNumDeCompte() {
+		return numDeCompte;
+	}
+
+	public void setNumDeCompte(int numDeCompte) {
+		this.numDeCompte = numDeCompte;
+	}
+
+	public String getDateOuverture() {
+		return dateOuverture;
+	}
+
+	public void setDateOuverture(String dateOuverture) {
+		this.dateOuverture = dateOuverture;
+	}
+
+	public int getTel() {
+		return tel;
+	}
+
+	public void setTel(int tel) {
+		this.tel = tel;
+	}
 	
 	
 	
