@@ -19,6 +19,13 @@ public class ConseillerService {
 	private Conseiller conseiller;
 	ArrayList<Client> listeClients = new ArrayList<Client>();
 
+	
+	
+	public ConseillerService(Conseiller conseiller) {
+		super();
+		this.conseiller = conseiller;
+	}
+
 	public void clientInitiaux() {
 		Client client1, client2, client3, client4;
 	//	client1 = new ClientNormal("Rue val Fontaine","Saint genis les Ollières",69290,"clientNormal"); 
@@ -80,24 +87,18 @@ public class ConseillerService {
 		
 	}
 
-	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,
-			ComptePlacement comptePlacement) {
+	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,ComptePlacement compte) {
+//	//	clientFortune.
+	//	villeDePlacement 
+		
+		
 	}
 
 	
 	
 	public float simulationCredit(Credit credit) {
-		/* 	public Credit(Client client, float taux, int dureeEnMois, int mensualites, float montant) {
-		super();
-		this.client = client;
-		this.taux = taux;
-		this.dureeEnMois = dureeEnMois;
-		this.mensualites = mensualites;
-		this.montant = montant;
-	}
-		*/
 		
-		float interets =  ( credit.getMontant() * credit.getTaux() * credit.getDureeEnMois() ) / 12; 
+		float interets =  ( credit.getMontant() * credit.getTaux() * credit.getDureeEnMois() ) / 12; //Fait le calcul d'interets
 		
 		return interets;
 	}
