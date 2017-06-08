@@ -9,5 +9,14 @@ public class ClientFortune extends ClientNormal {
 		
 		// TODO Auto-generated constructor stub
 	}
+	public ClientFortune(String adresse, String ville,
+			int codePostal, Compte compte, String typeClient) {
+		super();
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = codePostal;
+		this.compte = compte;
+		this.typeClient = typeClient;
+	}
 
 }

@@ -3,11 +3,11 @@ package com.formation.domaine;
 public abstract class Client extends Personne {
 
 	// proprietes
-	private String adresse;
-	private String ville;
-	private int codePostal;
-	private Compte compte;
-	private String typeClient;
+	protected String adresse;
+	protected String ville;
+	protected int codePostal;
+	protected Compte compte;
+	protected String typeClient;
 
 	// getters/setters
 	public String getAdresse() {
@@ -49,6 +49,19 @@ public abstract class Client extends Personne {
 	}
 
 	// constructeur
+<<<<<<< HEAD
+=======
+	
+	
+	public Client(String adresse, String ville,
+			int codePostal, Compte compte, String typeClient) {
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codePostal = codePostal;
+		this.compte = compte;
+		this.typeClient = typeClient;
+	}
+>>>>>>> 2dd7cd50f4497cfc07add6bbb61e26242afe0329
 
 	public Client(String adresse, String ville, int codePostal, Compte compte) {
 		super();

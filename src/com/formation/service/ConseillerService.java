@@ -39,20 +39,25 @@ public class ConseillerService {
 	};
 
 	public boolean creerClient(String adresse, int codePostal, String ville, Compte compte, String typeClient) {
+<<<<<<< HEAD
 		if (typeClient.equals("clientNormal")) {
 			ClientNormal nouveauClient = new ClientNormal();
+=======
+		if (typeClient.equals("clientNormal")) { 
+			ClientNormal nouveauClient = new ClientNormal(adresse,ville,codePostal,null,typeClient);
+>>>>>>> 2dd7cd50f4497cfc07add6bbb61e26242afe0329
 			listeClients.add(nouveauClient);
 			return true;
 		}
 
 		else if (typeClient.equals("clientFortune")) {
-			ClientFortune nouveauClient2 = new ClientFortune();
+			ClientFortune nouveauClient2 = new ClientFortune(adresse,ville,codePostal,null,typeClient);
 			listeClients.add(nouveauClient2);
 			return true;
 		}
 
 		else if (typeClient.equals("clientEntreprise")) {
-			ClientEntreprise nouveauClient3 = new ClientEntreprise();
+			ClientEntreprise nouveauClient3 = new ClientEntreprise(adresse,ville,codePostal,null,typeClient);
 			listeClients.add(nouveauClient3);
 			return true;
 		} else
@@ -99,11 +104,31 @@ public class ConseillerService {
 
 	}
 
+<<<<<<< HEAD
+=======
+	
+	
+	@Override
+	public String toString() {
+		return "ConseillerService [conseiller=" + conseiller
+				+ ", listeClients=" + listeClients + "]";
+	}
+
+>>>>>>> 2dd7cd50f4497cfc07add6bbb61e26242afe0329
 	public float simulationCredit(Credit credit) {
 
 		float interets = (credit.getMontant() * credit.getTaux() * credit.getDureeEnMois()) / 12; // Fait le calcul
 																									// d'interets
 
 		return interets;
+	}
+
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+
+
+	public ArrayList<Client> getListeClients() {
+		return listeClients;
 	}
 }
