@@ -49,13 +49,13 @@ public class ConseillerService {
 		}
 
 		else if (typeClient.equals("clientFortune")) {
-			ClientFortune nouveauClient2 = new ClientFortune();
+			ClientFortune nouveauClient2 = new ClientFortune(adresse,ville,codePostal,null,typeClient);
 			listeClients.add(nouveauClient2);
 			return true;
 		}
 
 		else if (typeClient.equals("clientEntreprise")) {
-			ClientEntreprise nouveauClient3 = new ClientEntreprise();
+			ClientEntreprise nouveauClient3 = new ClientEntreprise(adresse,ville,codePostal,null,typeClient);
 			listeClients.add(nouveauClient3);
 			return true;
 		} else

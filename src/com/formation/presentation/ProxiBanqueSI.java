@@ -33,8 +33,14 @@ public class ProxiBanqueSI {
 		Clyde.setPrenom("Clyde");
 		
 		ConseillerService conseillerService = new ConseillerService(Konrad);
-		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
+		
+		//test creation de client
+//		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
+		System.out.println(conseillerService.creerClient("21 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
 		System.out.println(conseillerService.getListeClients());
+		System.out.println(Konrad.getListeClientConseilles());
+		
+		//test remove
 		
 //		// D�clarations
 //		int choix;
