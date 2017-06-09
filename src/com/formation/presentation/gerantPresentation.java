@@ -1,9 +1,17 @@
 package com.formation.presentation;
 
 import java.util.Scanner;
-
+/**
+ * 
+ * @author tuyen
+ *
+ */
 public class gerantPresentation {
-
+	/**
+	
+	 *			menu pour connexion d'un gerant
+	 *         non utilisee encore
+	 */
 	public void menuGerant(){
 		
 		int choix;

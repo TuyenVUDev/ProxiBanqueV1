@@ -12,9 +12,18 @@ import com.formation.domaine.ComptePlacement;
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Credit;
 import com.formation.domaine.Transaction;
-
+/**
+ * 
+ * @author tuyen
+ *
+ *			
+ */
 public class conseillerClientService {
-
+	/**
+	* 
+	*methodes metiers pour la classe Conseiller
+	*         	Classe des methodes metiers relative au client (creation, modification, suppression d'informations)
+	*/
 	private Conseiller conseiller;
 	ArrayList<Client> listeClients = new ArrayList<Client>();
 
@@ -23,6 +32,22 @@ public class conseillerClientService {
 		this.conseiller = conseiller;
 	}
 
+/**
+ * 	
+ * @param nom
+ * @param prenom
+ * @param adresse
+ * @param codePostal
+ * @param ville
+ * @param compte1 : compte courant
+ * @param compte2 : compte epargne
+ * @param typeClient : fortune normal ou entreprise
+ * @return
+ */
+	
+	/**
+	 *          methode de creation de client et d'ajout de celui-ci a la liste de son conseiller
+	 */
 	public boolean creerClient(String nom, String prenom, String adresse, int codePostal, String ville,
 			Compte compte1,Compte compte2, String typeClient) {
 			if (typeClient.equals("clientNormal")) {
@@ -51,12 +76,16 @@ public class conseillerClientService {
 				return false; // Renvoie false si aucun client n'a été crée
 		} 
 
-
+	/**
+	 *          methode de suppression de client
+	 */
 	public void supprimerClient(int index) {
 		listeClients.remove(index);
 
 	}
-
+	/**
+	 *          methode de modification d'info client
+	 */
 	public void modifInfoClient(int index, String nom, String prenom, String ville, String adresse, int codePostal) {
 		listeClients.get(index).setNom(nom);
 		listeClients.get(index).setPrenom(prenom);
@@ -65,7 +94,10 @@ public class conseillerClientService {
 		listeClients.get(index).setCodePostal(codePostal);
 
 	}
-
+	/**
+	* 
+	*methode pour acceder aux infos client
+	*/
 	public String getInfoClient(int index) {
 		return listeClients.get(index).toString();
 	}

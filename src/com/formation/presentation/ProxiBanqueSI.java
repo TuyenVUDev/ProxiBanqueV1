@@ -9,18 +9,28 @@ import com.formation.domaine.ClientFortune;
 import com.formation.domaine.ClientNormal;
 import com.formation.domaine.Compte;
 import com.formation.domaine.Credit;
-import com.formation.domaine.CreditConso;
-import com.formation.domaine.CompteCourant;
-
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Gerant;
-import com.formation.domaine.Transaction;
 import com.formation.domaine.Transaction;
 import com.formation.service.CompteService;
 import com.formation.service.conseillerClientService;
 
-public class ProxiBanqueSI {
 
+/**
+ * 
+ * @author tuyen
+ *
+
+ *         
+ */
+public class ProxiBanqueSI {
+	/**
+	 *         Classe contenant la methode principale, 
+	 *         non terminee
+	 *         Les fonctionnalites sont pour l'instant pour un unique conseiller
+	 *         Modification a faire : implementer les autres classes presentation pour alleger la methode main
+	 *         
+	 */         
 	public static void main(String[] args) {
 
 		// Declaration pour test
@@ -43,23 +53,7 @@ public class ProxiBanqueSI {
 
 		conseillerClientService conseillerClientService = new conseillerClientService(Konrad);
 		CompteService compteService = new CompteService(Konrad);
-//
-		conseillerClientService.creerClient("toto", "tata", "1 rue trucmuche", 00001, "Lyon", null, null,
-				"clientNormal");
-//		conseillerClientService.creerClient("toto", "tata", "2 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientEntreprise");
-//		conseillerClientService.creerClient("toto", "tata", "3 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientFortune");
-//		conseillerClientService.creerClient("toto", "tata", "4 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientNormal");
-//		conseillerClientService.creerClient("toto", "tata", "5 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientNormal");
-//		conseillerClientService.creerClient("toto", "tata", "6 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientNormal");
-//		conseillerClientService.creerClient("toto", "tata", "7 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientNormal");
-//		conseillerClientService.creerClient("toto", "tata", "8 rue trucmuche", 00001, "Lyon", null, null,
-//				"clientNormal");
+
 
 		AffichagePortefeuillePresentation affichage = new AffichagePortefeuillePresentation();
 		int choix, index, index2, codePostal, numDeCompte, tel, icompte1, icompte2, duree, mensualites;
@@ -67,20 +61,8 @@ public class ProxiBanqueSI {
 		char cont = 'O';
 		String adresse, nom, prenom, ville, typeClient, dateOuverture, typeCompte;
 		Scanner sc = new Scanner(System.in);
-		//
-		// System.out
-		// .println("Accueil de ProxiBanqueSI : \n acces pour : \n1 : Conseiller
-		// \n2 : Gerant \n");
-		// choix = sc.nextInt();
-		// switch (choix) {
-		// case 1:
-		// System.out.println("Connexion d'un conseiller \n");
-		// break;
-		// case 2:
-		// System.out.println("Connexion d'un gerant \n");
-		//
-		// break;
-		// }
+
+
 
 		do {
 			System.out.println("Accueil conseiller\n actions possibles :\n" + "1 : ajouter un nouveau client\n"
@@ -89,7 +71,7 @@ public class ProxiBanqueSI {
 					+ "6 : effectuer un virement de compte a compte\n" + "7 : faire une simulation de credit\n"
 					+ "8 : obtenir laliste des transactions\n" + "9 : faire de la gestion de patrimoine\n"
 					+ "10 : faire un audit des clients");
-			choix = sc.nextInt(); // Demande l'option � s�lectionner
+			choix = sc.nextInt(); 
 			sc.nextLine();
 			switch (choix) {
 
@@ -251,13 +233,10 @@ public class ProxiBanqueSI {
 				break;
 
 			case 8:
-				System.out.println("gestion de patrimoine)");
+				System.out.println("gestion de patrimoine) -- NON IMPLEMENTE ");
 				break;
 
 			case 9:
-
-				Compte compte = new Compte(-900, 1, "ZE", 34);
-				compteService.alouerCompteaClient(Konrad.getListeClientConseilles().get(0), compte, 1);
 
 				System.out.println("audit des clients \n");
 				System.out.println("les clients normaux dont le solde est inferieur au decouvert : \n");

@@ -4,11 +4,19 @@ import java.util.Scanner;
 
 import com.formation.domaine.Conseiller;
 import com.formation.service.conseillerClientService;
-
+/**
+ * 
+ * @author tuyen
+ *
+ */
 public class conseillerPresentation {
 	Conseiller conseiller;
 	conseillerClientService conseillerClientService = new conseillerClientService(conseiller);
-
+	/**
+	 * 
+	 *
+	 *         classe non utilisee, sa fonction est de contenir l'affichage de l'interface pour la connexion d'un conseiller
+	 */
 	public void menuConseiller() {
 		char cont = 'O';
 

@@ -36,11 +36,11 @@ public class CompteService {
 	 * comptes, creations, modifications, virements, placements ect. Le solde du
 	 * compte en paramètre permet de rediriger le type de Compte d'interet.
 	 *
-	 * Rentrer en parametre dans ce ordre le solde du compte à creer, une date
+	 * Rentrer en parametre dans ce ordre le solde du compte a� creer, une date
 	 * d'ouverture (String), un telephone (int), et le type de compte, SOIT
 	 * "compteNormal" SOIT "compteEpargne"
 	 *
-	 * @return soit un null lorsque le compte n'est pas crée, soit une sous classe
+	 * @return soit un null lorsque le compte n'est pas cree, soit une sous classe
 	 *         de Compte, qui est soit de type CompteFortune, CompteCourant,
 	 *         CompteEpargne
 	 */

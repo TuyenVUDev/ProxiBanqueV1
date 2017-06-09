@@ -3,8 +3,17 @@ package com.formation.presentation;
 import com.formation.domaine.Client;
 import com.formation.domaine.Conseiller;
 
+/**
+ * 
+ * @author tuyen
+ *
+ */
 public class AffichagePortefeuillePresentation {
-
+	/**
+	 * 
+	 *
+	 *        classe utilisee pour l'affichage d'une liste de clients
+	 */
 	void afficherPorteFeuille(Conseiller conseiller) {
 		
 		for (Client client : conseiller.getListeClientConseilles()) {
