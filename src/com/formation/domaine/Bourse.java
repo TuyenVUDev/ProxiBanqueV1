@@ -1,5 +1,10 @@
 package com.formation.domaine;
-
+/**
+ * 
+ * Ceci est un test de javadoc
+ * @author alex
+ *
+ */
 public class Bourse {
 
 	private String bourseParis = "Paris";
