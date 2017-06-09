@@ -19,9 +19,11 @@ public class ClientEntreprise extends Client {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ClientEntreprise(String adresse, String ville,
+	public ClientEntreprise(String nom, String prenom,String adresse, String ville,
 			int codePostal, Compte compte, String typeClient) {
 		super();
+		this.prenom=prenom;
+		this.nom=nom;
 		this.adresse = adresse;
 		this.ville = ville;
 		this.codePostal = codePostal;

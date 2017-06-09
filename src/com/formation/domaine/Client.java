@@ -1,7 +1,7 @@
 package com.formation.domaine;
 
 public abstract class Client extends Personne {
-	
+
 	// proprietes
 	protected String adresse;
 	protected String ville;
@@ -42,22 +42,23 @@ public abstract class Client extends Personne {
 		this.compte = compte;
 	}
 
-	
-	
-	
+	public String getTypeClient() {
+		return typeClient;
+	}
+
+	public void setTypeClient(String typeClient) {
+		this.typeClient = typeClient;
+	}
+
 	@Override
 	public String toString() {
-		return "Client [adresse=" + adresse + ", ville=" + ville
-				+ ", codePostal=" + codePostal + ", compte=" + compte
-				+ ", typeClient=" + typeClient + ", nom=" + nom + ", prenom="
-				+ prenom + "]";
+		return "Client [adresse=" + adresse + ", ville=" + ville + ", codePostal=" + codePostal + ", compte=" + compte
+				+ ", typeClient=" + typeClient + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 
 	// constructeur
 
-	
-	public Client(String adresse, String ville,
-			int codePostal, Compte compte, String typeClient) {
+	public Client(String adresse, String ville, int codePostal, Compte compte, String typeClient) {
 		this.adresse = adresse;
 		this.ville = ville;
 		this.codePostal = codePostal;
@@ -72,6 +73,7 @@ public abstract class Client extends Personne {
 		this.codePostal = codePostal;
 		this.compte = compte;
 	}
+
 	public Client(String adresse, String ville, int codePostal) {
 		super();
 		this.adresse = adresse;
@@ -79,6 +81,7 @@ public abstract class Client extends Personne {
 		this.codePostal = codePostal;
 		this.compte = null;
 	}
+
 	public Client(String adresse, String ville) {
 		super();
 		this.adresse = adresse;
@@ -86,6 +89,7 @@ public abstract class Client extends Personne {
 		this.codePostal = 0;
 		this.compte = null;
 	}
+
 	public Client(String adresse) {
 		super();
 		this.adresse = adresse;
@@ -93,6 +97,7 @@ public abstract class Client extends Personne {
 		this.codePostal = 0;
 		this.compte = null;
 	}
+
 	public Client() {
 		super();
 		this.adresse = "inconnu";
@@ -100,6 +105,5 @@ public abstract class Client extends Personne {
 		this.codePostal = 0;
 		this.compte = null;
 	}
-	
 
 }
