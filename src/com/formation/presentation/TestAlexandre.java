@@ -14,6 +14,8 @@ import com.formation.domaine.Gerant;
 import com.formation.domaine.Transaction;
 import com.formation.service.CompteService;
 import com.formation.service.ConseillerService;
+import com.formation.domaine.Credit;
+
 
 public class TestAlexandre {
 
@@ -39,7 +41,7 @@ public class TestAlexandre {
 		
 		System.out.println(Clyde);
 		System.out.println(Claude);
-		
+		/*
 		Compte premiercompte = new CompteCourant();
 		Compte secondcompte = new CompteCourant();
 
@@ -55,14 +57,18 @@ public class TestAlexandre {
 		
 		Clyde.setCompte(premiercompte);
 		Claude.setCompte(secondcompte);
-
+	*/
+		System.out.println("ICIIII   " + Clyde.getCompte());
+		
+		
 		/*Clyde.getCompte().setNumDeCompte(30000);
+		 
 		Clyde.getCompte().setDateOuverture("En mai");
 		Clyde.getCompte().setTel(060000000);
 		Claude.getCompte().setSolde(30000);
 		Claude.getCompte().setNumDeCompte(30050);
 		Claude.getCompte().setDateOuverture("En juin");
-		Claude.getCompte().setTel(060000005); */
+		Claude.getCompte().setTel(060000005); 
 		System.out.println("=========COMPTES AVANT TRANSACTION========");
 
 		System.out.println(Clyde);
@@ -80,58 +86,15 @@ public class TestAlexandre {
 		System.out.println("Compte de Clyde : " + premiercompte); // La méthode toString du compte est à refaire
 		System.out.println("Compte de Claude : " + secondcompte); //Les chiffres coincident
 
+		//Test Credit
 		
-		/*
-		ConseillerService conseillerService = new ConseillerService(Konrad);
-		
-		//test creation de client
-		System.out.println(conseillerService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal"));
-		System.out.println(conseillerService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(conseillerService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientEntreprise"));
-		System.out.println(Konrad.getListeClientConseilles());
+		Credit credittest = new Credit(Clyde, 2,5, 12, 500000);
+		float Somme  = CompteService.simulationCredit(credittest);
 
-		for (Client client : Konrad.getListeClientConseilles()){
-			System.out.println(Konrad.getListeClientConseilles().indexOf(client) 
-					+ " : " + client.getAdresse() + " " 
-					+ client.getPrenom());
-		}
-//		System.out.println(Konrad.getListeClientConseilles().stream()
-//				.collect(Collectors.toList()));
-//		*/
-		//test remove
 		
-//		// D�clarations
-//		int choix;
-//		char cont = 'O';
-//		
-//
-//		Scanner sc = new Scanner(System.in);
-//		
-//		do {
-//		System.out.println("Accueil de ProxiBanqueSI : \n + acces pour : \n1 : Conseiller \n2 : Gerant \n");
-//		choix = sc.nextInt(); 
-//			switch (choix) {
-//			case 1:
-//				System.out.println("Connexion d'un conseiller \n");
-//				conseillerPresentation conseillerPresentation =new conseillerPresentation();
-//				conseillerPresentation.menuConseiller();
-//				break;
-//			case 2:
-//				System.out.println("Connexion d'un gerant \n");
-//				
-//				break;
-//			}
-//				System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
-//				cont = sc.next().charAt(0);	
-//			
-//			} while (cont == 'O');
-//			
-//
+		System.out.println("======TEST CREDIT======" + credittest + "\n" + Somme); //Les chiffres coincident
+		 */
+		
 		}
 	}
 

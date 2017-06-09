@@ -16,6 +16,15 @@ public class Credit {
 		this.mensualites = mensualites;
 		this.montant = montant;
 	}
+	
+	public Credit(Client client, float taux, int dureeEnMois, float montant) {
+		super();
+		this.client = client;
+		this.taux = taux;
+		this.dureeEnMois = dureeEnMois;
+		this.mensualites = 0;
+		this.montant = montant;
+	}
 
 	// toString
 	@Override

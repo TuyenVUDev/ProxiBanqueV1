@@ -1,12 +1,12 @@
 package com.formation.domaine;
 
-public  class Compte {
+public class Compte {
 
 	protected float solde;
 	protected int numDeCompte;
 	protected String dateOuverture;
 	protected int tel;
-	
+
 	public Compte(float solde, int numDeCompte, String dateOuverture, int tel) {
 		super();
 		this.solde = solde;
@@ -15,11 +15,12 @@ public  class Compte {
 		this.tel = tel;
 	}
 
-	public Compte() {super();
-	this.solde = 0;
-	this.numDeCompte = 000000;
-	this.dateOuverture = "Pas encore";
-	this.tel = 000;
+	public Compte() {
+		super();
+		this.solde = 0;
+		this.numDeCompte = 000000;
+		this.dateOuverture = "Pas encore";
+		this.tel = 000;
 	}
 
 	@Override
@@ -59,8 +60,5 @@ public  class Compte {
 	public void setTel(int tel) {
 		this.tel = tel;
 	}
-	
-	
-	
-	
+
 }
