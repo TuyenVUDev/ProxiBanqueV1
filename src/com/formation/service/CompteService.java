@@ -28,7 +28,7 @@ public class CompteService {
 		this.conseiller = conseiller;
 	}
 
-	public static Compte creerCompte(float solde, int numDeCompte, String dateOuverture, int tel, String typeCompte) {
+	public  Compte creerCompte(float solde, int numDeCompte, String dateOuverture, int tel, String typeCompte) {
 		if (typeCompte.equals("compteNormal")) {
 
 			if (solde > 500000) {
@@ -52,7 +52,7 @@ public class CompteService {
 
 	}// Renvoie false si aucun client n'a été crée
 
-	public static void alouerCompteaClient(Client client, Compte compte) {
+	public void alouerCompteaClient(Client client, Compte compte) {
 		client.setCompte(compte);
 
 	}

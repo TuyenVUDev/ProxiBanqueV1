@@ -7,6 +7,9 @@ import com.formation.domaine.Client;
 import com.formation.domaine.ClientEntreprise;
 import com.formation.domaine.ClientFortune;
 import com.formation.domaine.ClientNormal;
+import com.formation.domaine.Compte;
+import com.formation.domaine.CompteCourant;
+
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Gerant;
 import com.formation.service.CompteService;
@@ -56,12 +59,10 @@ public class ProxiBanqueSI {
 		 null, "clientNormal");
 
 		AffichagePortefeuillePresentation affichage = new AffichagePortefeuillePresentation();
-
-
-		// // D�clarations
-		int choix, index, codePostal;
+		int choix, index, codePostal,numDeCompte,tel;
+		float solde;
 		char cont = 'O';
-		String adresse, nom, prenom, ville, typeClient;
+		String adresse, nom, prenom, ville, typeClient,dateOuverture,typeCompte;
 		Scanner sc = new Scanner(System.in);
 		//
 		// System.out
@@ -145,14 +146,32 @@ public class ProxiBanqueSI {
 				break;
 			case 5:
 				System.out.println("creation de comtpe\n");
-				System.out.println(compteService.creerCompte(1000, 200001, "01/020/03", 123 , "compteNormal"));
-				
+				System.out.println("solde : \n");
+				solde  = sc.nextFloat();
+				sc.nextLine();
+				System.out.println("numero de compte :\n");
+				numDeCompte=sc.nextInt();
+				sc.nextLine();
+				System.out.println("date d'ouverture : \n");
+				dateOuverture=sc.nextLine();
+				System.out.println("telephone :\n");
+				tel=sc.nextInt();
+				sc.nextLine();
+				System.out.println("type de compte (compteNormal, compteEpargne) :\n");
+				typeCompte=sc.nextLine();
+				Compte compteTemporaire;
+				compteTemporaire=compteService.creerCompte(solde, numDeCompte, dateOuverture, tel,typeCompte);
+				System.out.println("pour le client :\n");
+				affichage.afficherPorteFeuille(Konrad);
+				index = sc.nextInt();
+				sc.nextLine();
+				compteService.alouerCompteaClient(Konrad.getListeClientConseilles().get(index), compteTemporaire);
 				break;
 			case 6:
-				System.out.println("virement de compte a compte\n");
+				System.out.println("virement de compte a compte\n"); //ok
 				break;
 			case 7:
-				System.out.println("simulation de credit\n");
+				System.out.println("simulation de credit\n"); //ok
 				break;
 			case 8:
 				System.out.println("gestion de patrimoine)");
