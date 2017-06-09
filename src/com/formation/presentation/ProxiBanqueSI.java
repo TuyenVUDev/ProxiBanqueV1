@@ -72,9 +72,9 @@ public class ProxiBanqueSI {
 		// test remove
 
 		// // D�clarations
-		int choix, index;
+		int choix, index, codePostal;
 		char cont = 'O';
-
+		String adresse, nom, prenom, ville, typeClient;
 		Scanner sc = new Scanner(System.in);
 		//
 		// System.out
@@ -104,23 +104,20 @@ public class ProxiBanqueSI {
 
 			switch (choix) {
 			case 1:
-				conseillerClientService.creerClient("1 rue trucmuche", 00001,
-						"Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("2 rue trucmuche", 00001,
-						"Lyon", null, "clientEntreprise");
-				conseillerClientService.creerClient("3 rue trucmuche", 00001,
-						"Lyon", null, "clientFortune");
-				conseillerClientService.creerClient("4 rue trucmuche", 00001,
-						"Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("5 rue trucmuche", 00001,
-						"Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("6 rue trucmuche", 00001,
-						"Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("7 rue trucmuche", 00001,
-						"Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("8 rue trucmuche", 00001,
-						"Lyon", null, "clientNormal");
-
+				System.out.println("nom :");
+				nom = sc.nextLine();
+//				System.out.println("prenom :");
+//				prenom = sc.nextLine();
+//				System.out.println("adresse :");
+//				adresse = sc.nextLine();
+//				System.out.println("code postal :");
+//				codePostal = sc.nextInt();
+//				System.out.println("ville :");
+//				ville = sc.nextLine();
+//				System.out.println("typeClient (clientNormal, clientFortune, clientEntreprise) :");
+//				typeClient = sc.nextLine();
+//				conseillerClientService.creerClient(adresse,codePostal,
+//						ville, null, typeClient);
 				break;
 			case 2:
 				System.out.println("suppression d'un client\n");
