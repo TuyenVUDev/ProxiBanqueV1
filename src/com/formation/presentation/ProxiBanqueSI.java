@@ -9,7 +9,7 @@ import com.formation.domaine.ClientFortune;
 import com.formation.domaine.ClientNormal;
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Gerant;
-import com.formation.service.ConseillerService;
+import com.formation.service.CompteService;
 import com.formation.service.conseillerClientService;
 
 public class ProxiBanqueSI {
@@ -36,10 +36,8 @@ public class ProxiBanqueSI {
 
 		conseillerClientService conseillerClientService = new conseillerClientService(
 				Konrad);
-		// test creation de client
-		// System.out.println(Konrad.getListeClientConseilles().size());
-		// //ERREUR
-
+		CompteService compteService= new CompteService(Konrad);
+		
 		 conseillerClientService.creerClient("toto","tata","1 rue trucmuche", 00001, "Lyon",
 		 null, "clientNormal");
 		 conseillerClientService.creerClient("toto","tata","2 rue trucmuche", 00001, "Lyon",
@@ -59,17 +57,6 @@ public class ProxiBanqueSI {
 
 		AffichagePortefeuillePresentation affichage = new AffichagePortefeuillePresentation();
 
-		// conseillerClientService.supprimerClient(3);
-
-		// conseillerClientService.modifInfoClient(3, "McLaughlin", "John",
-		// "NewYork", "3 rue perdue");
-		// System.out.println(conseillerClientService.getInfoClient(3));
-		// affichage.afficherPorteFeuille(Konrad);
-
-		// System.out.println(Konrad.getListeClientConseilles().stream()
-		// .collect(Collectors.toList()));
-		//
-		// test remove
 
 		// // Dï¿½clarations
 		int choix, index, codePostal;
@@ -97,15 +84,18 @@ public class ProxiBanqueSI {
 					+ "2 : obtenir la liste des clients de votre portefeuille\n"
 					+ "3 : supprimer un client\n"
 					+ "4 : modifier les informations d'un client\n"
-					+ "5 : effectuer un virement de compte ï¿½ compte\n"
-					+ "6 : faire une simulation de credit\n"
-					+ "7 : obtenir laliste des transactions\n"
-					+ "8 : faire de la gestion de patrimoine\n"
-					+ "9 : faire un audit des clients");
+					+ "5 : créer un compte\n"
+					+ "6 : effectuer un virement de compte ï¿½ compte\n"
+					+ "7 : faire une simulation de credit\n"
+					+ "8 : obtenir laliste des transactions\n"
+					+ "9 : faire de la gestion de patrimoine\n"
+					+ "10 : faire un audit des clients");
 			choix = sc.nextInt(); // Demande l'option ï¿½ sï¿½lectionner
 			sc.nextLine();
 			switch (choix) {
 			case 1:
+				
+				//creation client
 				System.out.println("nom :");
 				nom = sc.nextLine();
 				System.out.println("prenom :");
@@ -154,12 +144,17 @@ public class ProxiBanqueSI {
 				conseillerClientService.modifInfoClient(index, nom, prenom, ville, adresse, codePostal);
 				break;
 			case 5:
-				System.out.println("virement de compte a compte\n");
+				System.out.println("creation de comtpe\n");
+				System.out.println(compteService.creerCompte(1000, 200001, "01/020/03", 123 , "compteNormal"));
+				
 				break;
 			case 6:
-				System.out.println("simulation de credit\n");
+				System.out.println("virement de compte a compte\n");
 				break;
 			case 7:
+				System.out.println("simulation de credit\n");
+				break;
+			case 8:
 				System.out.println("gestion de patrimoine)");
 				break;
 			case 9:
