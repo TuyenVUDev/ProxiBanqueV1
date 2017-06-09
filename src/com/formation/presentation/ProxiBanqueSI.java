@@ -7,9 +7,12 @@ import com.formation.domaine.Client;
 import com.formation.domaine.ClientEntreprise;
 import com.formation.domaine.ClientFortune;
 import com.formation.domaine.ClientNormal;
+import com.formation.domaine.Compte;
+import com.formation.domaine.CompteCourant;
+
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Gerant;
-import com.formation.service.ConseillerService;
+import com.formation.service.CompteService;
 import com.formation.service.conseillerClientService;
 
 public class ProxiBanqueSI {
@@ -36,45 +39,30 @@ public class ProxiBanqueSI {
 
 		conseillerClientService conseillerClientService = new conseillerClientService(
 				Konrad);
-		// test creation de client
-		// System.out.println(Konrad.getListeClientConseilles().size());
-		// //ERREUR
-
+		CompteService compteService= new CompteService(Konrad);
+		
 		 conseillerClientService.creerClient("toto","tata","1 rue trucmuche", 00001, "Lyon",
-		 null, "clientNormal");
+		 null,null, "clientNormal");
 		 conseillerClientService.creerClient("toto","tata","2 rue trucmuche", 00001, "Lyon",
-		 null, "clientEntreprise");
+		 null,null, "clientEntreprise");
 		 conseillerClientService.creerClient("toto","tata","3 rue trucmuche", 00001, "Lyon",
-		 null, "clientFortune");
+		 null,null, "clientFortune");
 		 conseillerClientService.creerClient("toto","tata","4 rue trucmuche", 00001, "Lyon",
-		 null, "clientNormal");
+		 null,null, "clientNormal");
 		 conseillerClientService.creerClient("toto","tata","5 rue trucmuche", 00001, "Lyon",
-		 null, "clientNormal");
+		 null,null, "clientNormal");
 		 conseillerClientService.creerClient("toto","tata","6 rue trucmuche", 00001, "Lyon",
-		 null, "clientNormal");
+		 null,null, "clientNormal");
 		 conseillerClientService.creerClient("toto","tata","7 rue trucmuche", 00001, "Lyon",
-		 null, "clientNormal");
+		 null,null, "clientNormal");
 		 conseillerClientService.creerClient("toto","tata","8 rue trucmuche", 00001, "Lyon",
-		 null, "clientNormal");
+		 null,null, "clientNormal");
 
 		AffichagePortefeuillePresentation affichage = new AffichagePortefeuillePresentation();
-
-		// conseillerClientService.supprimerClient(3);
-
-		// conseillerClientService.modifInfoClient(3, "McLaughlin", "John",
-		// "NewYork", "3 rue perdue");
-		// System.out.println(conseillerClientService.getInfoClient(3));
-		// affichage.afficherPorteFeuille(Konrad);
-
-		// System.out.println(Konrad.getListeClientConseilles().stream()
-		// .collect(Collectors.toList()));
-		//
-		// test remove
-
-		// // Dï¿½clarations
-		int choix, index, codePostal;
+		int choix, index, codePostal,numDeCompte,tel;
+		float solde;
 		char cont = 'O';
-		String adresse, nom, prenom, ville, typeClient;
+		String adresse, nom, prenom, ville, typeClient,dateOuverture,typeCompte;
 		Scanner sc = new Scanner(System.in);
 		//
 		// System.out
@@ -97,15 +85,18 @@ public class ProxiBanqueSI {
 					+ "2 : obtenir la liste des clients de votre portefeuille\n"
 					+ "3 : supprimer un client\n"
 					+ "4 : modifier les informations d'un client\n"
-					+ "5 : effectuer un virement de compte ï¿½ compte\n"
-					+ "6 : faire une simulation de credit\n"
-					+ "7 : obtenir laliste des transactions\n"
-					+ "8 : faire de la gestion de patrimoine\n"
-					+ "9 : faire un audit des clients");
+					+ "5 : créer un compte\n"
+					+ "6 : effectuer un virement de compte ï¿½ compte\n"
+					+ "7 : faire une simulation de credit\n"
+					+ "8 : obtenir laliste des transactions\n"
+					+ "9 : faire de la gestion de patrimoine\n"
+					+ "10 : faire un audit des clients");
 			choix = sc.nextInt(); // Demande l'option ï¿½ sï¿½lectionner
 			sc.nextLine();
 			switch (choix) {
 			case 1:
+				
+				//creation client
 				System.out.println("nom :");
 				nom = sc.nextLine();
 				System.out.println("prenom :");
@@ -120,7 +111,7 @@ public class ProxiBanqueSI {
 				System.out.println("typeClient (clientNormal, clientFortune, clientEntreprise) :");
 				typeClient = sc.nextLine();
 				conseillerClientService.creerClient(nom, prenom,adresse,codePostal,
-						ville, null, typeClient);
+						ville, null,null, typeClient);
 				break;
 			case 2 : System.out.println("liste des clients\n");
 				affichage.afficherPorteFeuille(Konrad);
@@ -154,12 +145,39 @@ public class ProxiBanqueSI {
 				conseillerClientService.modifInfoClient(index, nom, prenom, ville, adresse, codePostal);
 				break;
 			case 5:
-				System.out.println("virement de compte a compte\n");
+				System.out.println("creation de comtpe\n");
+				System.out.println("solde : \n");
+				solde  = sc.nextFloat();
+				sc.nextLine();
+				System.out.println("numero de compte :\n");
+				numDeCompte=sc.nextInt();
+				sc.nextLine();
+				System.out.println("date d'ouverture : \n");
+				dateOuverture=sc.nextLine();
+				System.out.println("telephone :\n");
+				tel=sc.nextInt();
+				sc.nextLine();
+				System.out.println("type de compte (compteNormal, compteEpargne) :\n");
+				typeCompte=sc.nextLine();
+				Compte compteTemporaire;
+				compteTemporaire=compteService.creerCompte(solde, numDeCompte, dateOuverture, tel,typeCompte);
+				System.out.println("pour le client :\n");
+				affichage.afficherPorteFeuille(Konrad);
+				index = sc.nextInt();
+				sc.nextLine();
+				System.out.println("compte 1 ou 2 ? :\n");
+				index=sc.nextInt();
+				sc.nextLine();
+				compteService.alouerCompteaClient(Konrad.getListeClientConseilles().get(index), compteTemporaire,index);
 				break;
 			case 6:
-				System.out.println("simulation de credit\n");
+				System.out.println("virement de compte a compte\n"); //ok
+				
 				break;
 			case 7:
+				System.out.println("simulation de credit\n"); //ok
+				break;
+			case 8:
 				System.out.println("gestion de patrimoine)");
 				break;
 			case 9:
