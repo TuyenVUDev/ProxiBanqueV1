@@ -1,11 +1,26 @@
 package com.formation.domaine;
 
+/**
+ * 
+ * Classe caracterisant un credit avec sa durée, son montant de base, son taux et la mensualite max de remboursement
+ */
+
+
+
 public class Credit {
 	// Declaration
 	private Client client;
 	private float taux;
 	private int dureeEnMois, mensualites;
 	private float montant;
+	/**
+	 * 
+	 * @param client indique le client pour le credit
+	 * @param taux le taux d interet, en float
+	 * @param dureeEnMois la duree du pret
+	 * @param mensualites la mensualite maximale que l on peut pqyer
+	 * @param montant le montant du pret que l on souhaite
+	 */
 
 	// Constructeur
 	public Credit(Client client, float taux, int dureeEnMois, int mensualites, float montant) {

@@ -1,19 +1,32 @@
 package com.formation.domaine;
 
+/**
+ * 
+ * 
+ * 
+ * Classe dans l'architecture domaine, classe heritee de Compte @see Compte
+ *  Possede un taux de remunaration de base de 3%
+ */
+
 public class CompteEpargne extends Compte{
 
+	private float tauxDeRemuneration = 3;
 	
+	//Constructeur
 	public CompteEpargne(float solde, int numDeCompte, String dateOuverture, int tel) {
 		super(solde, numDeCompte, dateOuverture, tel);
 		// TODO Auto-generated constructor stub
 	}
 
-	private float tauxDeRemuneration = 3;
-
 	@Override
 	public String toString() {
-		return "Le compte est de type epargne avec un taux de rémunération de 3%";
+		return "CompteEpargne [tauxDeRemuneration=" + tauxDeRemuneration + ", solde=" + solde + ", numDeCompte="
+				+ numDeCompte + ", dateOuverture=" + dateOuverture + ", tel=" + tel + ", carte=" + carte + "]";
 	}
+
+	
+
+	
 	
 	
 }

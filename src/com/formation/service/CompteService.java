@@ -3,7 +3,6 @@ package com.formation.service;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.formation.domaine.Bourse;
 import com.formation.domaine.Client;
 import com.formation.domaine.ClientEntreprise;
 import com.formation.domaine.ClientFortune;

@@ -2,6 +2,17 @@ package com.formation.domaine;
 
 import java.util.Collection;
 
+
+
+/**
+ * 
+ * Classe fille de Personne
+ * Defini les caracteristiques des gerants,
+ * Ils peuvent voir la liste des conseillers
+ */
+
+
+
 public class Gerant extends Personne {
 
 	private Collection<Conseiller> listeConseillers;

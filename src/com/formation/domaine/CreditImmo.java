@@ -1,5 +1,12 @@
 package com.formation.domaine;
 
+/**
+ * 
+ * Classe fille de @see Credit
+ * Servira a definir la specificite des credits de consommations
+ */
+
+
 public class CreditImmo extends Credit {
 
 	public CreditImmo(Client client, float taux, int dureeEnMois, int mensualites, float montant) {
@@ -9,7 +16,10 @@ public class CreditImmo extends Credit {
 
 	@Override
 	public String toString() {
-		return "CreditImmo []";
+		return "CreditImmo [toString()=" + super.toString() + ", getClient()=" + getClient() + ", getTaux()="
+				+ getTaux() + ", getDureeEnMois()=" + getDureeEnMois() + ", getMensualites()=" + getMensualites()
+				+ ", getMontant()=" + getMontant() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
 
+	
 }
