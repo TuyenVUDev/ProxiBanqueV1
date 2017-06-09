@@ -1,28 +1,18 @@
 package com.formation.domaine;
+/**
+ * 
+ * 
+ *
+ * Classe dans l'architecture domaine, classe heritee de Client,
+ *         est destine aux clients riches. Est utilise dans @conseillerClientService
+ *  Nous rappelons compte1 = compteCourant et compte2 = compte epargne
+ * 
+ */
+
+
 
 public class ClientNormal extends Client {
 
-//	// constructeur
-//	public ClientNormal(String nom, String prenom, String adresse, String ville, int codePostal, Object object, String typeClient) {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
-
-	/**
-	 * 
-	 */
-
-
-	/**
-	 * @param nom
-	 * @param prenom
-	 * @param adresse
-	 * @param ville
-	 * @param codePostal
-	 * @param compte1
-	 * @param compte2
-	 * @param typeClient
-	 */
 	public ClientNormal(String nom, String prenom, String adresse, String ville, int codePostal, Compte compte1,
 			Compte compte2, String typeClient) {
 		super(nom, prenom, adresse, ville, codePostal, compte1, compte2, typeClient);

@@ -2,6 +2,15 @@ package com.formation.domaine;
 
 import java.util.Collection;
 
+/**
+ * 
+ * 
+ * 
+ * Classe dans l'architecture domaine, caracterise les agence
+ * 
+ * 
+ */
+
 public class Agence {
 
 	// proprietes

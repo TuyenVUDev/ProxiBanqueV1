@@ -1,8 +1,19 @@
 package com.formation.domaine;
 
+/**
+ * 
+ * 
+ * Classe dans l'architecture domaine, classe abstraite Parametres
+ *         adresse, ville, codePostal qui donnent les infos du client typeClient
+ *         sera utilise pour definir
+ * 
+ * 
+ */
+
 public abstract class Client extends Personne {
 
 	// proprietes
+
 	protected String adresse;
 	protected String ville;
 	protected int codePostal;
@@ -10,7 +21,8 @@ public abstract class Client extends Personne {
 	protected Compte compte2;
 	protected String typeClient;
 
-	// getters/setters
+	
+	//Getters and setters
 	public String getAdresse() {
 		return adresse;
 	}
@@ -59,10 +71,7 @@ public abstract class Client extends Personne {
 		this.typeClient = typeClient;
 	}
 
-	public Client() {
-		super();
-	}
-
+	// Constructeurs
 	/**
 	 * @param nom
 	 * @param prenom
@@ -70,8 +79,13 @@ public abstract class Client extends Personne {
 	 * @param ville
 	 * @param codePostal
 	 * @param compte1
+	 *            Un client peut avoir 2 comptes, par default compte1 est le
+	 *            compteCourant
 	 * @param compte2
+	 *            Un client peut avoir 2 comptes, par default compte1 est le
+	 *            comtpeEntreprise
 	 * @param typeClient
+	 *            Servira a definir le client
 	 */
 	public Client(String nom, String prenom, String adresse, String ville, int codePostal, Compte compte1,
 			Compte compte2, String typeClient) {
@@ -84,6 +98,12 @@ public abstract class Client extends Personne {
 		this.typeClient = typeClient;
 	}
 
+	public Client() {
+		super();
+	}
+
+	
+	
 	@Override
 	public String toString() {
 		return "Client [adresse=" + adresse + ", ville=" + ville + ", codePostal=" + codePostal + ", compte1=" + compte1

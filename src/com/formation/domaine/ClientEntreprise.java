@@ -1,5 +1,15 @@
 package com.formation.domaine;
 
+/**
+ * 
+ * 
+ *
+ * Classe dans l'architecture domaine, classe heritee de Client,
+ *         est destinne aux entreprises. Il est conseillé en général pour un compteEntreprise de renseigner les données du CEO
+ * 
+ * 
+ */
+
 public class ClientEntreprise extends Client {
 
 	// proprietes
@@ -15,32 +25,15 @@ public class ClientEntreprise extends Client {
 	}
 
 	// constructeur
-	
-		// TODO Auto-generated constructor stub
-	
 
-	/**
-	 * @param nom
-	 * @param prenom
-	 * @param adresse
-	 * @param ville
-	 * @param codePostal
-	 * @param compte1
-	 * @param compte2
-	 * @param typeClient
-	 */
 	public ClientEntreprise(String nom, String prenom, String adresse, String ville, int codePostal, Compte compte1,
 			Compte compte2, String typeClient) {
 		super(nom, prenom, adresse, ville, codePostal, compte1, compte2, typeClient);
-		// TODO Auto-generated constructor stub
+		// Il est conseillée de rentrer le nom du CEO comme client
 	}
 
-	/**
-	 * 
-	 */
 	public ClientEntreprise() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -49,7 +42,5 @@ public class ClientEntreprise extends Client {
 				+ ", codePostal=" + codePostal + ", compte1=" + compte1 + ", compte2=" + compte2 + ", typeClient="
 				+ typeClient + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
-
-	
 
 }

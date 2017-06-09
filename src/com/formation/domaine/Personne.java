@@ -1,12 +1,17 @@
 package com.formation.domaine;
+/**
+ * 
+ * Classe  abstraite Personne
+ *Servira a definir le nom et le prenom des personnes
+ */
+
+
 
 public abstract class Personne {
 
 	protected String nom;
 	protected String prenom;
 	
-	//getter/setter
-//>>>>>>> bbf6761c3849ec38346af3c9c3f2ae7727612036
 	public String getNom() {
 		return nom;
 	}
