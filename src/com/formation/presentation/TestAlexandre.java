@@ -54,20 +54,19 @@ public class TestAlexandre {
 		System.out.println(Clyde);
 		System.out.println(Claude);
 
-		System.out.println(Konrad.getListeClientConseilles().toString());
-
+		
+		
 		
 		 //creerCompte(float solde, int numDeCompte, String dateOuverture, int tel, String typeCompte)
 		
 		
-		/*
+	
 		Compte premiercompte = new CompteCourant();
 		Compte secondcompte = new CompteCourant();
 
-	*/
 		
 		
-		/*Clyde.getCompte().setNumDeCompte(30000);
+		Clyde.getCompte().setNumDeCompte(30000);
 		 
 		Clyde.getCompte().setDateOuverture("En mai");
 		Clyde.getCompte().setTel(060000000);
@@ -75,6 +74,8 @@ public class TestAlexandre {
 		Claude.getCompte().setNumDeCompte(30050);
 		Claude.getCompte().setDateOuverture("En juin");
 		Claude.getCompte().setTel(060000005); 
+		
+		
 		System.out.println("=========COMPTES AVANT TRANSACTION========");
 
 		System.out.println(Clyde);
@@ -99,7 +100,7 @@ public class TestAlexandre {
 
 		
 		System.out.println("======TEST CREDIT======" + credittest + "\n" + Somme); //Les chiffres coincident
-		 */
+		 
 		
 		}
 	}

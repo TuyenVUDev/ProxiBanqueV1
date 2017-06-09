@@ -10,7 +10,7 @@ public class AffichagePortefeuillePresentation {
 		for (Client client : conseiller.getListeClientConseilles()) {
 			if (conseiller.getListeClientConseilles().indexOf(client) > 9)
 				System.out
-						.println("Attention, vous avez deja  10 client dans votre portefeuille, contactez le gerant\n");
+						.println("Attention, vous avez deja :  10 client dans votre portefeuille, contactez le gerant\n");
 			else
 				System.out.println(conseiller.getListeClientConseilles()
 						.indexOf(client)
