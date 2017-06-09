@@ -71,7 +71,7 @@ public class conseillerClientService {
 
 	@Override
 	public String toString() {
-		return "ConseillerService [conseiller=" + conseiller
+		return "Conseiller " + conseiller
 				+ ", listeClients=" + listeClients + "]";
 	}
 

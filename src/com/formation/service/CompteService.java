@@ -39,7 +39,7 @@ public class CompteService {
 		
 	}
 
-	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,CompteCourant comptenormal, ComptePlacement comptebourse) {
+	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,Compte comptenormal, ComptePlacement comptebourse) {
 		Transaction virementriche; //Parametres gererPatrimoine changés par rapport au UML
 		virementriche = new Transaction(clientFortune, montantPlacement, comptenormal, comptebourse); //Au final revient à faire une transaction entre 2 comptes
 		virementCompteACompte(virementriche);
