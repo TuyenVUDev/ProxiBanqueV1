@@ -12,7 +12,15 @@ package com.formation.domaine;
 
 public class CompteCourant extends Compte {
 
-	private float decouvert = 1000;
+	private float decouvert = -1000;
+
+	public float getDecouvert() {
+		return decouvert;
+	}
+
+	public void setDecouvert(float decouvert) {
+		this.decouvert = decouvert;
+	}
 
 	// Constructeur
 	public CompteCourant(float solde, int numDeCompte, String dateOuverture, int tel) {

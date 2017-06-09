@@ -13,7 +13,7 @@ public class Compte {
 	
 	
 	
-	protected float solde;
+	protected float solde = 0;
 	protected int numDeCompte;
 	protected String dateOuverture;
 	protected int tel;

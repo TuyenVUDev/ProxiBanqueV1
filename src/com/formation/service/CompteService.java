@@ -27,6 +27,7 @@ import java.util.Random;
 
 public class CompteService {
 
+	Conseiller conseiller = new Conseiller();
 	/**
 	 * 
 	 *
@@ -85,9 +86,6 @@ public class CompteService {
 
 	}
 
-<<<<<<< HEAD
-	public float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte à l'autre.
-=======
 	/**
 	 * Utilise une Transaction en parametre et fait un virement La methode fait un
 	 * test pour verifier si le compte du debiteur sera sous le plafond de
@@ -100,8 +98,7 @@ public class CompteService {
 	 *         si pas de transaction
 	 */
 
-	public static float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte ï¿½ l'autre.
->>>>>>> 90d681e38d50798b36f5039376846db4bcba7e54
+	public float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte ï¿½ l'autre.
 		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant();
 		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant();
 		if (finalCompteDebite > -1000) {
@@ -175,7 +172,7 @@ public class CompteService {
 	 * @return le motnant des interets que coutera le credit
 	 */
 
-	public static float simulationCredit(Credit credit) {
+	public float simulationCredit(Credit credit) {
 
 		float interets = (credit.getMontant() * credit.getTaux() * credit.getDureeEnMois()) / 12000; // Fait le calcul
 																										// d'interets
@@ -202,6 +199,10 @@ public class CompteService {
 			client.getCompte2().setDateOuverture(dateOuverture);
 			client.getCompte2().setTel(tel);}
 		
+	}
+	public CompteService(Conseiller conseiller) {
+		super();
+		this.conseiller = conseiller;
 	}
 
 }
