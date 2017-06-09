@@ -12,6 +12,8 @@ import com.formation.domaine.CompteCourant;
 
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Gerant;
+import com.formation.domaine.Transaction;
+import com.formation.domaine.Transaction;
 import com.formation.service.CompteService;
 import com.formation.service.conseillerClientService;
 
@@ -59,8 +61,8 @@ public class ProxiBanqueSI {
 		 null,null, "clientNormal");
 
 		AffichagePortefeuillePresentation affichage = new AffichagePortefeuillePresentation();
-		int choix, index, codePostal,numDeCompte,tel;
-		float solde;
+		int choix, index, index2, codePostal,numDeCompte,tel, icompte1,icompte2;
+		float solde,montant;
 		char cont = 'O';
 		String adresse, nom, prenom, ville, typeClient,dateOuverture,typeCompte;
 		Scanner sc = new Scanner(System.in);
@@ -145,7 +147,7 @@ public class ProxiBanqueSI {
 				conseillerClientService.modifInfoClient(index, nom, prenom, ville, adresse, codePostal);
 				break;
 			case 5:
-				System.out.println("creation de comtpe\n");
+				System.out.println("creation de compte\n");
 				System.out.println("solde : \n");
 				solde  = sc.nextFloat();
 				sc.nextLine();
@@ -166,12 +168,49 @@ public class ProxiBanqueSI {
 				index = sc.nextInt();
 				sc.nextLine();
 				System.out.println("compte 1 ou 2 ? :\n");
-				index=sc.nextInt();
+				index2=sc.nextInt();
 				sc.nextLine();
-				compteService.alouerCompteaClient(Konrad.getListeClientConseilles().get(index), compteTemporaire,index);
+				compteService.alouerCompteaClient(Konrad.getListeClientConseilles().get(index), compteTemporaire,index2);
 				break;
 			case 6:
-				System.out.println("virement de compte a compte\n"); //ok
+				System.out.println("virement de compte a compte\n");
+				affichage.afficherPorteFeuille(Konrad);
+				
+				System.out.println("quel index client (debiteur)? :\n");
+				index=sc.nextInt();
+				sc.nextLine();
+				Client clientDebite=Konrad.getListeClientConseilles().get(index);
+				
+				System.out.println("compte 1 ou 2 ?");
+				icompte1=sc.nextInt();
+				sc.nextLine();
+				
+				affichage.afficherPorteFeuille(Konrad);
+				
+				System.out.println("quel index client (crediteur)? :\n");
+				index=sc.nextInt();
+				sc.nextLine();
+				Client clientCredite=Konrad.getListeClientConseilles().get(index);
+				
+				System.out.println("compte 1 ou 2 ?");
+				icompte2=sc.nextInt();
+				sc.nextLine();
+				
+				System.out.println("quel montant ? :\n");
+				montant = sc.nextFloat();
+				sc.nextLine();
+				
+				Transaction transaction = null ;
+				
+				if (icompte1==1&&icompte2==1)
+					transaction= new Transaction(clientDebite, montant, clientCredite.getCompte1(), clientDebite.getCompte1());
+				else if (icompte1==2&&icompte2==1)
+					transaction= new Transaction(clientDebite, montant, clientCredite.getCompte2(), clientDebite.getCompte1());
+				else if (icompte1==1&&icompte2==2)
+					transaction= new Transaction(clientDebite, montant, clientCredite.getCompte1(), clientDebite.getCompte2());
+				else if (icompte1==2&&icompte2==2)
+					transaction= new Transaction(clientDebite, montant, clientCredite.getCompte2(), clientDebite.getCompte2());
+				compteService.virementCompteACompte(transaction);
 				
 				break;
 			case 7:

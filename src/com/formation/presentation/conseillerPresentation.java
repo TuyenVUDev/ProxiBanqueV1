@@ -54,7 +54,7 @@ public class conseillerPresentation {
 				System.out.println("modification des informations d'un client\n");
 				break;
 			case 4:
-				System.out.println("virement de compte � compte\n");
+				System.out.println("virement de compte a compte\n");
 				break;
 			case 5:
 				System.out.println("simulation de credit\n");

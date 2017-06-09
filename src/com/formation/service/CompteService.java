@@ -58,7 +58,7 @@ public class CompteService {
 
 	}
 
-	public static float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte à l'autre.
+	public float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte à l'autre.
 		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant();
 		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant();
 		transaction.getCompteDebite().setSolde(finalCompteDebite); // Fixe le solde du compte
