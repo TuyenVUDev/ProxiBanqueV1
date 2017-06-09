@@ -52,8 +52,9 @@ public class CompteService {
 
 	}// Renvoie false si aucun client n'a été crée
 
-	public void alouerCompteaClient(Client client, Compte compte) {
-		client.setCompte(compte);
+	public void alouerCompteaClient(Client client, Compte compte, int compte1ou2) {
+		if (compte1ou2==1) client.setCompte1(compte);
+		else client.setCompte2(compte);
 
 	}
 

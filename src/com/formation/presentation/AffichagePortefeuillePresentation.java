@@ -21,7 +21,9 @@ public class AffichagePortefeuillePresentation {
 						+ " "
 						+ client.getTypeClient()
 						+ " "
-						+ client.getCompte()
+						+ client.getCompte1()
+						+ " "
+						+ client.getCompte2()
 						);
 		}
 	}

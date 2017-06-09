@@ -25,10 +25,10 @@ public class conseillerClientService {
 	}
 
 	public boolean creerClient(String nom, String prenom, String adresse, int codePostal, String ville,
-			Compte compte, String typeClient) {
+			Compte compte1,Compte compte2, String typeClient) {
 			if (typeClient.equals("clientNormal")) {
 				ClientNormal nouveauClient = new ClientNormal(nom, prenom, adresse, ville,
-						codePostal, null, typeClient);
+						codePostal, null, null, typeClient);
 				listeClients.add(nouveauClient);
 				conseiller.setListeClientConseilles(listeClients);
 				return true;
@@ -36,7 +36,7 @@ public class conseillerClientService {
 
 			else if (typeClient.equals("clientFortune")) {
 				ClientFortune nouveauClient = new ClientFortune(nom, prenom,adresse,
-						ville, codePostal, null, typeClient);
+						ville, codePostal, null, null, typeClient);
 				listeClients.add(nouveauClient);
 				conseiller.setListeClientConseilles(listeClients);
 				return true;
@@ -44,7 +44,7 @@ public class conseillerClientService {
 
 			else if (typeClient.equals("clientEntreprise")) {
 				ClientEntreprise nouveauClient = new ClientEntreprise(nom, prenom,adresse,
-						ville, codePostal, null, typeClient);
+						ville, codePostal, null, null, typeClient);
 				listeClients.add(nouveauClient);
 				conseiller.setListeClientConseilles(listeClients);
 				return true;
