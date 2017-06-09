@@ -38,30 +38,33 @@ public class ProxiBanqueSI {
 				Konrad);
 		// test creation de client
 		// System.out.println(Konrad.getListeClientConseilles().size());
+		// //ERREUR
 
-		conseillerClientService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-		conseillerClientService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise");
-		conseillerClientService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientFortune");
-		conseillerClientService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-		conseillerClientService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-		conseillerClientService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-		conseillerClientService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-		conseillerClientService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-		
+		// conseillerClientService.creerClient("1 rue trucmuche", 00001, "Lyon",
+		// null, "clientNormal");
+		// conseillerClientService.creerClient("2 rue trucmuche", 00001, "Lyon",
+		// null, "clientEntreprise");
+		// conseillerClientService.creerClient("3 rue trucmuche", 00001, "Lyon",
+		// null, "clientFortune");
+		// conseillerClientService.creerClient("4 rue trucmuche", 00001, "Lyon",
+		// null, "clientNormal");
+		// conseillerClientService.creerClient("5 rue trucmuche", 00001, "Lyon",
+		// null, "clientNormal");
+		// conseillerClientService.creerClient("6 rue trucmuche", 00001, "Lyon",
+		// null, "clientNormal");
+		// conseillerClientService.creerClient("7 rue trucmuche", 00001, "Lyon",
+		// null, "clientNormal");
+		// conseillerClientService.creerClient("8 rue trucmuche", 00001, "Lyon",
+		// null, "clientNormal");
 
-//		conseillerClientService.getListeClients().remove(3);
-		System.out.println(Konrad.getListeClientConseilles().size());
+		AffichagePortefeuillePresentation affichage = new AffichagePortefeuillePresentation();
 
-		AffichagePortefeuillePresentation affichage= new AffichagePortefeuillePresentation();
-//		affichage.afficherPorteFeuille(Konrad);
-		
-		conseillerClientService.supprimerClient(3);
-		affichage.afficherPorteFeuille(Konrad);
+		// conseillerClientService.supprimerClient(3);
 
-
-		conseillerClientService.modifInfoClient(3, "McLaughlin", "John", "NewYork", "3 rue perdue");
-		System.out.println(conseillerClientService.getInfoClient(3));
-
+		// conseillerClientService.modifInfoClient(3, "McLaughlin", "John",
+		// "NewYork", "3 rue perdue");
+		// System.out.println(conseillerClientService.getInfoClient(3));
+		// affichage.afficherPorteFeuille(Konrad);
 
 		// System.out.println(Konrad.getListeClientConseilles().stream()
 		// .collect(Collectors.toList()));
@@ -69,32 +72,85 @@ public class ProxiBanqueSI {
 		// test remove
 
 		// // D�clarations
-		// int choix;
-		// char cont = 'O';
+		int choix, index;
+		char cont = 'O';
+
+		Scanner sc = new Scanner(System.in);
 		//
-		//
-		// Scanner sc = new Scanner(System.in);
-		//
-		// do {
-		// System.out.println("Accueil de ProxiBanqueSI : \n + acces pour : \n1 : Conseiller \n2 : Gerant \n");
+		// System.out
+		// .println("Accueil de ProxiBanqueSI : \n  acces pour : \n1 : Conseiller \n2 : Gerant \n");
 		// choix = sc.nextInt();
 		// switch (choix) {
 		// case 1:
 		// System.out.println("Connexion d'un conseiller \n");
-		// conseillerPresentation conseillerPresentation =new
-		// conseillerPresentation();
-		// conseillerPresentation.menuConseiller();
 		// break;
 		// case 2:
 		// System.out.println("Connexion d'un gerant \n");
 		//
 		// break;
 		// }
-		// System.out.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
-		// cont = sc.next().charAt(0);
-		//
-		// } while (cont == 'O');
-		//
-		//
+
+		do {
+			System.out.println("Accueil conseiller\n actions possibles :\n"
+					+ "1 : ajouter un nouveau client\n"
+					+ "2 : supprimer un client\n"
+					+ "3 : modifier les informations d'un client\n"
+					+ "4 : effectuer un virement de compte � compte\n"
+					+ "5 : faire une simulation de credit\n"
+					+ "6 : obtenir laliste des transactions\n"
+					+ "7 : faire de la gestion de patrimoine\n"
+					+ "8 : faire un audit des clients");
+			choix = sc.nextInt(); // Demande l'option � s�lectionner
+
+			switch (choix) {
+			case 1:
+				conseillerClientService.creerClient("1 rue trucmuche", 00001,
+						"Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("2 rue trucmuche", 00001,
+						"Lyon", null, "clientEntreprise");
+				conseillerClientService.creerClient("3 rue trucmuche", 00001,
+						"Lyon", null, "clientFortune");
+				conseillerClientService.creerClient("4 rue trucmuche", 00001,
+						"Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("5 rue trucmuche", 00001,
+						"Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("6 rue trucmuche", 00001,
+						"Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("7 rue trucmuche", 00001,
+						"Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("8 rue trucmuche", 00001,
+						"Lyon", null, "clientNormal");
+
+				break;
+			case 2:
+				System.out.println("suppression d'un client\n");
+				affichage.afficherPorteFeuille(Konrad);
+				System.out.println("Quel client supprimer ? Entrer l'index");
+				index = sc.nextInt();
+				conseillerClientService.supprimerClient(index);
+				break;
+			case 3:
+				System.out
+						.println("modification des informations d'un client\n");
+				break;
+			case 4:
+				System.out.println("virement de compte � compte\n");
+				break;
+			case 5:
+				System.out.println("simulation de credit\n");
+				break;
+			case 7:
+				System.out.println("gestion de patrimoine)");
+				break;
+			case 8:
+				System.out.println("audit des clients");
+				break;
+			}
+			System.out
+					.println(" \n Voulez-vous faire autre chose? Tappez O pour continuer (o majuscule)");
+			cont = sc.next().charAt(0);
+
+		} while (cont == 'O');
+
 	}
 }

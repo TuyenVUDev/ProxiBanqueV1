@@ -2,7 +2,12 @@ package com.formation.presentation;
 
 import java.util.Scanner;
 
+import com.formation.domaine.Conseiller;
+import com.formation.service.conseillerClientService;
+
 public class conseillerPresentation {
+	Conseiller conseiller;
+	conseillerClientService conseillerClientService = new conseillerClientService(conseiller);
 
 	public void menuConseiller() {
 		char cont = 'O';
@@ -19,11 +24,20 @@ public class conseillerPresentation {
 				+ "7 : faire de la gestion de patrimoine\n"
 				+ "8 : faire un audit des clients");
 		choix = sc.nextInt(); // Demande l'option � s�lectionner
-
 		do {
 			switch (choix) {
 			case 1:
 				System.out.println("ajout d'un nouveau client \n");
+
+				conseillerClientService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise");
+				conseillerClientService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientFortune");
+				conseillerClientService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				conseillerClientService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				
 				break;
 			case 2:
 				System.out.println("suppression d'un client\n");
@@ -56,7 +70,7 @@ public class conseillerPresentation {
 	/**
 	 * 
 	 */
-	public conseillerPresentation() {
+	public conseillerPresentation(Conseiller conseiller) {
 		super();
 		// TODO Auto-generated constructor stub
 	}
