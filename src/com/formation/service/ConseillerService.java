@@ -67,11 +67,15 @@ public class ConseillerService {
 	public  float virementCompteACompte(Transaction transaction) { //Fait le virement d'un compte à l'autre.
 		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant();  //Credit du compte débité après opération
 		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant(); //Credit du compte crédité après opération
+		
+		if (finalCompteDebite>-1000) {
 		transaction.getCompteDebite().setSolde(finalCompteDebite); //Fixe le solde du compte
 		transaction.getCompteCredite().setSolde(finalCompteCredite); //Fixe le solde du compte
-
-		return transaction.getMontant(); //Retourne le montant de la transaction
-		
+		return transaction.getMontant();
+		}
+		 //Retourne le montant de la transaction
+		else
+			return 0;
 	}
 
 	public void gererPatrimoine(ClientFortune clientFortune, float montantPlacement, Bourse villeDePlacement,ComptePlacement compte) {

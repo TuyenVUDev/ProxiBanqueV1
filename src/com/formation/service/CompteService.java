@@ -12,9 +12,11 @@ import com.formation.domaine.Compte;
 import com.formation.domaine.CompteCourant;
 import com.formation.domaine.ComptePlacement;
 import com.formation.domaine.CompteEpargne;
+import com.formation.domaine.CompteFortune;
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Credit;
 import com.formation.domaine.Transaction;
+import java.util.Random;
 
 public class CompteService {
 
@@ -26,44 +28,38 @@ public class CompteService {
 		this.conseiller = conseiller;
 	}
 
-	public boolean creerCompte(float solde, int numDeCompte, String dateOuverture, int tel, String typeCompte) {
+	public static Compte creerCompte(float solde, int numDeCompte, String dateOuverture, int tel, String typeCompte) {
 		if (typeCompte.equals("compteNormal")) {
 
 			if (solde > 500000) {
-				ComptePlacement nouveauPlacement = new ComptePlacement(solde, numDeCompte, dateOuverture, tel);
-				return true;
+				CompteFortune nouveauPlacement = new CompteFortune(solde, numDeCompte, dateOuverture, tel);
+				return nouveauPlacement;
 			}
 
 			else if (solde < 500000) {
 				CompteCourant nouveauCourant = new CompteCourant(solde, numDeCompte, dateOuverture, tel);
-				return true;
+				return nouveauCourant;
 			}
 		}
 
 		else if (typeCompte.equals("compteEpargne")) {
 			CompteEpargne nouveauEpargne = new CompteEpargne(solde, numDeCompte, dateOuverture, tel);
 
-			return true;
+			return nouveauEpargne;
 		} else
-			return false;
-		return false;
+			return null;
+		return null;
+
 	}// Renvoie false si aucun client n'a été crée
 
-	public void alouerCompteaClient(Client client, Compte compte) {
+	public static void alouerCompteaClient(Client client, Compte compte) {
 		client.setCompte(compte);
 
 	}
 
 	public static float virementCompteACompte(Transaction transaction) { // Fait le virement d'un compte à l'autre.
-		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant(); // Credit du
-																										// compte débité
-																										// après
-																										// opération
-		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant(); // Credit du
-																											// compte
-																											// crédité
-																											// après
-																											// opération
+		float finalCompteDebite = transaction.getCompteDebite().getSolde() - transaction.getMontant();
+		float finalCompteCredite = transaction.getCompteCredite().getSolde() + transaction.getMontant();
 		transaction.getCompteDebite().setSolde(finalCompteDebite); // Fixe le solde du compte
 		transaction.getCompteCredite().setSolde(finalCompteCredite); // Fixe le solde du compte
 
@@ -74,13 +70,17 @@ public class CompteService {
 	public void gererPatrimoine(Client clientFortune, float montantPlacement, Bourse villeDePlacement,
 			Compte comptenormal, ComptePlacement comptebourse) {
 		Transaction virementriche; // Parametres gererPatrimoine changés par rapport au UML
-		virementriche = new Transaction(clientFortune, montantPlacement, comptenormal, comptebourse); // Au final
-																										// revient à
-																										// faire une
-																										// transaction
-																										// entre 2
-																										// comptes
+		virementriche = new Transaction(clientFortune, montantPlacement, comptenormal, comptebourse);
 		virementCompteACompte(virementriche);
+	}
+
+	public void gererPatrimoine2(Client clientFortune, float montantPlacement, String ville) {
+		if (clientFortune.getCompte().getSolde()> 500000) {
+		Transaction virementriche; // Parametres gererPatrimoine changés par rapport au UML
+		
+		virementriche = new Transaction(clientFortune, montantPlacement, clientFortune.getCompte(), comptebourse);
+		virementCompteACompte(virementriche);}
+		else {}
 	}
 
 	@Override

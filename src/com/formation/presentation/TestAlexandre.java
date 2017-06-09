@@ -41,24 +41,30 @@ public class TestAlexandre {
 		
 		System.out.println(Clyde);
 		System.out.println(Claude);
+		Compte comptetest1,comptetest2;
+		comptetest1 = CompteService.creerCompte(50000, 3000001, "260504",5685,"compteNormal");
+		comptetest2 = CompteService.creerCompte(5000000, 3000002, "568954",12443644,"compteNormal");
+		System.out.println("Compte1   " + comptetest1);
+		System.out.println("Compte2   " + comptetest2);
+
+		
+		CompteService.alouerCompteaClient (Clyde, comptetest1);
+		CompteService.alouerCompteaClient (Claude, comptetest2);
+		
+		System.out.println(Clyde);
+		System.out.println(Claude);
+
+		System.out.println(Konrad.getListeClientConseilles().toString());
+
+		
+		 //creerCompte(float solde, int numDeCompte, String dateOuverture, int tel, String typeCompte)
+		
+		
 		/*
 		Compte premiercompte = new CompteCourant();
 		Compte secondcompte = new CompteCourant();
 
-		premiercompte.setSolde(50000);
-		premiercompte.setNumDeCompte(30000);
-		premiercompte.setDateOuverture("En mai");
-		premiercompte.setTel(060000000);
-		
-		secondcompte.setSolde(30000);
-		secondcompte.setNumDeCompte(40000);
-		secondcompte.setDateOuverture("En juin");
-		secondcompte.setTel(060000100);
-		
-		Clyde.setCompte(premiercompte);
-		Claude.setCompte(secondcompte);
 	*/
-		System.out.println("ICIIII   " + Clyde.getCompte());
 		
 		
 		/*Clyde.getCompte().setNumDeCompte(30000);
