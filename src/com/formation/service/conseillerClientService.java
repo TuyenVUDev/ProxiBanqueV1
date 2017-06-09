@@ -13,7 +13,6 @@ import com.formation.domaine.ComptePlacement;
 import com.formation.domaine.Conseiller;
 import com.formation.domaine.Credit;
 import com.formation.domaine.Transaction;
-import com.formation.exceptions.conseillerNbClientMaxException;
 
 public class conseillerClientService {
 
