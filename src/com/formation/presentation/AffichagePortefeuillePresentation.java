@@ -10,14 +10,19 @@ public class AffichagePortefeuillePresentation {
 		for (Client client : conseiller.getListeClientConseilles()) {
 			if (conseiller.getListeClientConseilles().indexOf(client) > 9)
 				System.out
-						.println("Attention, vous avez déjà 10 client dans votre portefeuille, contactez le gérant\n");
+						.println("Attention, vous avez deja� 10 client dans votre portefeuille, contactez le gerant\n");
 			else
 				System.out.println(conseiller.getListeClientConseilles()
 						.indexOf(client)
 						+ " : "
-						+ client.getAdresse()
+						+ client.getNom()
 						+ " "
-						+ client.getPrenom());
+						+ client.getPrenom()
+						+ " "
+						+ client.getTypeClient()
+						+ " "
+						+ client.getAdresse()
+						);
 		}
 	}
 }

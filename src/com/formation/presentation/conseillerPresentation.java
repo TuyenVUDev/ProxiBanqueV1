@@ -29,14 +29,22 @@ public class conseillerPresentation {
 			case 1:
 				System.out.println("ajout d'un nouveau client \n");
 
-				conseillerClientService.creerClient("1 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("2 rue trucmuche", 00001, "Lyon", null, "clientEntreprise");
-				conseillerClientService.creerClient("3 rue trucmuche", 00001, "Lyon", null, "clientFortune");
-				conseillerClientService.creerClient("4 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("5 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("6 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("7 rue trucmuche", 00001, "Lyon", null, "clientNormal");
-				conseillerClientService.creerClient("8 rue trucmuche", 00001, "Lyon", null, "clientNormal");
+				 conseillerClientService.creerClient("toto","tata","1 rue trucmuche", 00001, "Lyon",
+						 null, "clientNormal");
+						 conseillerClientService.creerClient("toto","tata","2 rue trucmuche", 00001, "Lyon",
+						 null, "clientEntreprise");
+						 conseillerClientService.creerClient("toto","tata","3 rue trucmuche", 00001, "Lyon",
+						 null, "clientFortune");
+						 conseillerClientService.creerClient("toto","tata","4 rue trucmuche", 00001, "Lyon",
+						 null, "clientNormal");
+						 conseillerClientService.creerClient("toto","tata","5 rue trucmuche", 00001, "Lyon",
+						 null, "clientNormal");
+						 conseillerClientService.creerClient("toto","tata","6 rue trucmuche", 00001, "Lyon",
+						 null, "clientNormal");
+						 conseillerClientService.creerClient("toto","tata","7 rue trucmuche", 00001, "Lyon",
+						 null, "clientNormal");
+						 conseillerClientService.creerClient("toto","tata","8 rue trucmuche", 00001, "Lyon",
+						 null, "clientNormal");
 				
 				break;
 			case 2:

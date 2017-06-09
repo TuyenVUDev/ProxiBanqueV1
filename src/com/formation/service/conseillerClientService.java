@@ -24,10 +24,10 @@ public class conseillerClientService {
 		this.conseiller = conseiller;
 	}
 
-	public boolean creerClient(String adresse, int codePostal, String ville,
+	public boolean creerClient(String nom, String prenom, String adresse, int codePostal, String ville,
 			Compte compte, String typeClient) {
 			if (typeClient.equals("clientNormal")) {
-				ClientNormal nouveauClient = new ClientNormal(adresse, ville,
+				ClientNormal nouveauClient = new ClientNormal(nom, prenom, adresse, ville,
 						codePostal, null, typeClient);
 				listeClients.add(nouveauClient);
 				conseiller.setListeClientConseilles(listeClients);
@@ -35,7 +35,7 @@ public class conseillerClientService {
 			}
 
 			else if (typeClient.equals("clientFortune")) {
-				ClientFortune nouveauClient = new ClientFortune(adresse,
+				ClientFortune nouveauClient = new ClientFortune(nom, prenom,adresse,
 						ville, codePostal, null, typeClient);
 				listeClients.add(nouveauClient);
 				conseiller.setListeClientConseilles(listeClients);
@@ -43,7 +43,7 @@ public class conseillerClientService {
 			}
 
 			else if (typeClient.equals("clientEntreprise")) {
-				ClientEntreprise nouveauClient = new ClientEntreprise(adresse,
+				ClientEntreprise nouveauClient = new ClientEntreprise(nom, prenom,adresse,
 						ville, codePostal, null, typeClient);
 				listeClients.add(nouveauClient);
 				conseiller.setListeClientConseilles(listeClients);
@@ -58,11 +58,13 @@ public class conseillerClientService {
 
 	}
 
-	public void modifInfoClient(int index, String nom, String prenom, String ville, String adresse) {
+	public void modifInfoClient(int index, String nom, String prenom, String ville, String adresse, int codePostal) {
 		listeClients.get(index).setNom(nom);
 		listeClients.get(index).setPrenom(prenom);
 		listeClients.get(index).setVille(ville);
 		listeClients.get(index).setAdresse(adresse);
+		listeClients.get(index).setCodePostal(codePostal);
+
 	}
 
 	public String getInfoClient(int index) {
