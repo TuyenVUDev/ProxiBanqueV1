@@ -36,3 +36,4 @@ toutes les fonctionnalites ne sont pas encore implementees. Le programme fourni 
 les fonctionnalites du gerant ne sont pas encore faites mais la majorite sont presentes.
 les entrees consoles doivent etre respectees car les erreurs ne sont pas encore prises en charge.
 avertissement sur la fonctionnalite "audit" : renvoie une erreur s'il existe un client sans compte.
+l'affichage des clients si il n'en existe pas renvoie une erreur
