@@ -11,8 +11,10 @@ Ouvre Eclipse et cliquez sur File->Import ->Existing Projects into Workspace
 
 Il doit y avoir 3 packages: com.formation.presentation, com.formation.service, com.formation.domaine
 Si le projet n'est pas importé, testez File->Import ->File System
+Regardez le dossier lib, il contient 2 fichiers hamcrest-core et jUnit4.12, sélectionnez-les, clic droit et faites build path pour qu'ils puissent être utilisés pour les test unitaires
 
-Félicitations, vous venez de télécharger
+
+Félicitations, vous venez de télécharger PROXYBANQUESIV1
 
 2) Utilisation
 
@@ -28,12 +30,17 @@ Dans une logique d'utilisation :
 N'hésitez pas à consulter la javadoc pour avoir des renseignements pour les classes et méthodes.
 Une plus grande attention a été portée sur la documentation des méthodes que du constructeur, dans un soucis de prioriétés.
 
-4) Commentaires
+4) Tests Unitaires
+Peu de tests unitaires ont été implémentés faute de temps.
+Ils sont surtout concentrés sur la création des objets Comptes et Clients. Le fichier TestsProxybanque contient les méthodes qui renverons des booleans ou les objets d'interets.
+Les quelques tests que nous avons réalisés sont concluants et tournent (cf printscreen) mais ont un problème d'initialisation non résolus sur certains ordinateurs(?) contactez nous si besoin
+
+5) Commentaires
 Pour tous commentaire, vous pouvez nous joindre à cette adresse email : PIVU@gmail.com
 
-5) MISE EN GARDE :
+
+6) MISE EN GARDE :
 toutes les fonctionnalites ne sont pas encore implementees. Le programme fourni se limite a l'usage d'un conseiller unique.
 les fonctionnalites du gerant ne sont pas encore faites mais la majorite sont presentes.
 les entrees consoles doivent etre respectees car les erreurs ne sont pas encore prises en charge.
 avertissement sur la fonctionnalite "audit" : renvoie une erreur s'il existe un client sans compte.
-l'affichage des clients si il n'en existe pas renvoie une erreur
